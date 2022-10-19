@@ -7,6 +7,7 @@
 - Do some research within to existing solutions within the area. Almost get a lay of the land.
 - Create a repo on github (this repo) put test codes within it and notes made at meetings.
 - At the momment focus on exploring, researching and making connections.
+- Do all feature adding on seperate branch and then when working merge with main
 
 ### Meeting frequency:
 - Bi-Weekly starting on 4th november, at around 4pm - 4.30pm
