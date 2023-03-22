@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<head>
+
+<title>Voting Client</title>
+
+</head>
+<body>
+<div id="app">
+<p><b>Did William the Conqueror Win the Battle of hastings in 1066?</b></p>  
+<button data-action="vote1" @click="vote1()">He won the war</button>
+<button data-action="vote2" @click="vote2()">He lost the war</button>
+<button data-action="vote3" @click="vote3()">He died on the battlefield</button>
+{{ message }}
+</div>
+
+</body>
+<script>
+    const { createApp } = Vue
+
+    
+
+    const RootComponent = {
+
+        methods: {
+            vote1(){ // Post item
+                fetch(`http://90.219.146.203/response`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: '{"qResponse": 0}',
+            })},
+
+            vote2(){ // Post item
+                fetch(`http://90.219.146.203/response`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: '{"qResponse": 1}',
+            })},
+
+            vote3(){ // Post item
+                fetch(`http://90.219.146.203/response`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: '{"qResponse": 2}',
+            })}
+        }
+    }
+
+    const app = Vue.createApp(RootComponent)
+	const vm = app.mount('#app')
+
+</script>
