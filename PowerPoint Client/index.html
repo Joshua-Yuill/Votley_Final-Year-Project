@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Eac5HRrLGBj9D61HTaI_6lQklH_L8T-1QyNeoJlnrG7ZCUq1gYhlrfmv9PCQnbUX4tXEA3XWZLm-mTNGMMXgxBs0_px9qFSHIMjwU1VhKYu7zzs1LN1Czo5SZwv7y2oFoUjbhbzRJnzgDlHsWkkdXGcsKX2DJHv8GXUJ5tMugOx2RBWrpyjrsBd39K42sLC6BCUQUPdwYJHjv0cYT0pB3w" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly93aHNlcnZlci5jYW50ZXJidXJ5LmFjLnVrOjIwODMvY3BzZXNzMjU2MzQ1NTIzMC9kb3dubG9hZD9za2lwZW5jb2RlPTEmZmlsZT0lMmZob21lJTJmbWlmZXJxZSUyZnB1YmxpY19odG1sJTJmaW5kZXguaHRtbA"/><script src="/chart.js@v2"></script>
+
+<style>
+body
+{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #444444;
+    font-size: 40pt;
+    background-color: #FAFAFA;
+    text-align: center;
+}
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.now{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #01A982;
+    font-size: 20pt;
+    background-color: #FAFAFA;
+    text-align: center;
+}
+</style>
+    <meta charset="UTF-8">
+ 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Powerpoint Websocket Client</title>
+ 
+</head>
+ 
+<body>
+<div class="row">
+<div class="column">
+    <p><b>Did William the Conqueror Win the Battle of hastings in 1066?</b></p>
+    <br>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example">
+    <div class="now">Cast your vote now!</div>
+</div>
+<div class="column">
+    <canvas id="myChart"width="5" height="5"></canvas>
+</div>
+</div>
+</body>
+ 
+<script>
+  const ctx = document.getElementById('myChart');
+
+
+
+
+  const data = {
+    labels: ['He Won The war','He died in battle','He lost the war'],
+    datasets: [{
+      label: 'No Of Votes',
+      data: [0,0,0],
+      backgroundColor: [
+        'rgba(255, 26, 104, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(0, 0, 0, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 26, 104, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(0, 0, 0, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+
+
+  const config = {
+    type: 'bar',
+    data,
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+  };
+
+  // render init block
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+  function addData(chart, label, data) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    Chart.update();
+}
+ 
+
+
+  const socket = new WebSocket('wss://connection.kimochi.uk/wss');
+ 
+    socket.addEventListener('open', function (event) {
+ 
+    socket.send('hello');
+ 
+  });
+ 
+ 
+ 
+  socket.addEventListener('message', function (event) {
+ 
+    //document.write(event.data);
+    
+    var obj = event.data;
+    
+    console.log(typeof event.data);
+    
+    let start = "'";
+    var val = parseInt(obj[5])
+    
+    var datas = JSON.parse(event.data);
+    console.log(datas);
+    console.log(datas[0]);
+
+    myChart.data.datasets[0].data[0] = datas[0];
+    myChart.data.datasets[0].data[1] = datas[1];
+    myChart.data.datasets[0].data[2] = datas[2];
+    myChart.update();
+    
+ 
+  });
+ 
+  const contactServer = () => {
+ 
+    socket.send("Hello");
+ 
+  }
+ 
+</script>
+<!--Chart.js for visulaisations in powerpoint-->
+ 
+</html>
