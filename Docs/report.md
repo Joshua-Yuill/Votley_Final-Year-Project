@@ -128,7 +128,7 @@ For this phase of development, I was focused on getting an interface functioning
 
 ![Powerpoint client design mockup](/Docs/Mockup-Images/PowerPoint_Mockup.png)
 
-<p style="text-align: center;"><i>Figure 1: PowerPoint client design mockup</i></p>
+<p align="center"><i>Figure 1: PowerPoint client design mockup</i></p>
 
 I felt this design had some advantages based on our target audience, including:
 
