@@ -12,6 +12,7 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
   - [Abstract](#abstract)
   - [Introduction](#introduction)
   - [Problem Analysis](#problem-analysis)
+    - [Scope of the project](#scope-of-the-project)
     - [Literature review](#literature-review)
       - [Talk less Teaching](#talk-less-teaching)
       - [Technology and the Modern Classroom](#technology-and-the-modern-classroom)
@@ -43,6 +44,8 @@ With our modern-day society with technology and our increasingly fast paced life
 ## Problem Analysis
 
 This solution was conceptualized working with the head of ICT at Sir Rodger Manwood's secondary school. He wanted a way to increase interactivity within his lessons, without having to break the flow of the lesson, which could introduce disruption and slow down learning. A tool to be able to ask questions to his students and get live feedback from them, without having to switch windows or utilize external tools.
+
+### Scope of the project
 
 This is not only a good solution for just our client, but could be useful for teachers around the country. With PowerPoint being a staple in the modern classroom, this tool would easily integrate within the teachers current workflow and minimal additional knowledge would be required to use it. This is hugely beneficial as with marking and planning teachers have very little time to learn new tools and software.
 
