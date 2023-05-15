@@ -173,7 +173,7 @@ Once I had the ability to manipulate the graph with votes it was time for the fi
 
 After another setback due to the limitations of Web Viewer, I was able to get a working interface that would react to incoming data. This however took far longer than I originally anticipated, which again had a knock on affect of the progress of the project. This combined with trying to fix issues that were not addressed within the previous phase put me behind schedule.
 
-This again highlights my inexperience when it comes to weighting tasks as I thought that it would take far less time than it actually did.
+This again highlights my inexperience when it comes to weighting tasks as I thought that it would take far less time than it actually did. This further set me back than I had anticipated, and I was not able to complete as much as I would have liked to in this phase.
 
 ## Phase 3 Development
 
