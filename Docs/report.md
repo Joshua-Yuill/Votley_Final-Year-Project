@@ -2,7 +2,7 @@
 
 ## Acknowledgements
 
-I would like to thank my amazing project supervisor Allan Callaghan for all his help and support throughout the project.
+I would like to thank my amazing project supervisor Allan Callaghan for all his help and support throughout the project. Thank you also to Sir Rodger Manwood's School for allowing me to work with them on this project.
 
 ## Table of Contents
 
@@ -32,6 +32,7 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
   - [Conclusion](#conclusion)
   - [References](#references)
   - [Appendices](#appendices)
+    - [Links to Repositories](#links-to-repositories)
     - [Meeting Notes](#meeting-notes)
     - [Communication History](#communication-history)
 
@@ -69,7 +70,7 @@ Some commercial solutions are already pre-existing and an analysis of such can b
 
 #### Mentimeter
 
-Mentimeter is 
+Mentimeter is a response tool that allows for the creation of interactive presentations. It allows for the creation of polls, quizzes, word clouds and more. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service (Iona,2018).
 
 #### Poll Everywhere
 
@@ -114,10 +115,11 @@ The first issue I encountered was being able to import webpages into PowerPoint.
 
 Researching ways to display webpages within PowerPoint was the first step. I found several executables online that promised to add live webpage functionality within Powerpoint, but they all seemed to only work with older versions of PowerPoint, which would have been no use to me as they were obsolete. I did not like this solution much also, due to the nature of having to install and trust someone else’s software within a sensitive environment like a school. This was when I stumbled upon the add in for PowerPoint called "Web Viewer" an official microsoft extension. The add-in promised to work with the latest version of PowerPoint which was perfect for my use case. Due to it being an official microsoft add-in, it was easily installable from the add-in store in PowerPoint. This I felt like was the most appropriate route to take, in terms of user experience, ease of installation and security.
 
-With Web Viewer added to my PowerPoint installation, I was ready and excited to start. Before I installed Web Viewer, I had read some of the reviews contributing to the 1.9 out of 5 stars it has on the Microsoft store. “Doesn’t work with basic sites”, “Waste of time” and “Next to useless” (Microsoft Corporation, 2023) were just a few of the reviews I read. I wanted to ensure that I wasn’t going to have the same experience that those users had, so I loaded up a blank presentation, added the add in and typed in "www.google.com". Nothing. Maybe it doesn’t work with search engines I thought, so I navigated to "www.canterbury.ac.uk" still nothing. I had a problem. I noticed that it had a default URL in the search bar of "www.wikipedia.org" so I tried that and it worked.
+With Web Viewer added to my PowerPoint installation, I was ready and excited to start. Before I installed Web Viewer, I had read some of the reviews contributing to the 1.9 out of 5 stars it has on the Microsoft store. “Doesn’t work with basic sites”, “Waste of time” and “Next to useless” (Microsoft Corporation, 2023) were just a few of the reviews I read. I wanted to ensure that I wasn’t going to have the same experience that those users had, so I loaded up a blank presentation, added the add in and typed in "www.google.com". Nothing. Maybe it doesn’t work with search engines I thought, so I navigated to "www.canterbury.ac.uk" still nothing. I had a problem. I noticed that it had a default URL in the search bar of "www.wikipedia.org" so I tried that and it worked. Now I just had to figure out why that worked, and the others didn’t. I made a basic Hello world webpage and hosted it on a web server that supported HTTPS. There it was it showed up. I knew I could display a webpage of some kind in PowerPoint, even if it was just a simple text page. This was a start.
 
-Now I just had to figure out why that worked, and the others didn’t. I made a basic Hello world webpage and hosted it on a web server that supported HTTPS. There it was it showed up.
-Ensuring Web Viewer Supported WebSocket’s was critical for my project, I added a simple web socket script to my Hello World page, that would just display on the page what it received. I sent the message and nothing. I tried it on my browser, and it worked. Web Viewer has no developer tools and no console, so I had no method of any feedback as to why it was not working. After a lot of trial and error I worked out that it required secure WebSocket’s. After setting up a domain to utilise secure WebSocket’s the messages appeared within Web Viewer.
+Moving onto the RestAPI implementation, it went quite well. I chose to use FastAPI for my framework choice as it had robust Websocket support, its good performance due to its use of Starlette and in-built error handling. I created 2 POST endpoints and a Websocket endpoint. The first POST endpoint was for creating a new vote, it would take in a JSON object with the question and the options. The second POST endpoint was for submitting a vote. The websocket connection would not just tell the client there was a new vote, it would send the total vote count every time. This was done to reduce processing on the client side due to it being within a PowerPoint presentation.
+
+Ensuring Web Viewer Supported WebSocket’s was critical for my project, I added a simple web socket script to my Hello World page, that would just display on the page what it received. I sent the message and nothing. I tried it on my browser, and it worked. Web Viewer has no developer tools and no console, so I had no method of any feedback as to why it was not working. After a lot of trial and error and a lot of researching, I worked out that it required secure WebSocket’s. This was a huge setback as I now had to understand how to implement secure websockets. After a lot more research I was ready to try it with secure websockets and it worked. I was able to send a message from the server to the client and display it on the page. This was a huge milestone for me as it meant I could now send data from the server to the client. This meant my project was now possible.
 
 ### Phase 1 Evaluation
 
@@ -153,13 +155,25 @@ I felt this design had some advantages based on our target audience, including:
 - The design dedicates half of the page to a graph displaying the outcome of the vote, this makes it not only easy for the students and teacher to see the progress of the vote, but for the teacher to discuss the outcome of the vote with the class in greater depth if necessary.
 - All fonts are a fork of the sans-serif font Helvetica ensuring that students with low vision can still read the text clearly (Buultjens, 1999). The colors of the graph are distinct and bold so that they can easily be distinguished from one another.
 
-I planned on using Chart.js for the live charts and wanted to ensure that worked also. I added the example to my Hello world page and loaded it. Nothing but a blank screen again. I tried it in my browser on my computer and there it was displaying; this was another Web Viewer issue. 
+I planned on using Chart.js for the live charts and wanted to ensure that worked also. I added the example to my Hello world page and loaded it. Nothing but a blank screen again. I tried it in my browser on my computer and there it was displaying; this was another Web Viewer issue.
 
 After digging around in the Web Viewer menus I discovered that it uses, Microsoft edge version 1.9.0.0, an old and no longer supported browser. Because of this it did not contain all the latest features in modern browsers such as Web Workers which was utilised within the Chart.js library.
 
-After much anguish and frustration, trying to look for a new library that would be compatible with this antiquated browser, I was able to discuss my issue with one of my peers who suggested using an older version of the Chart.js library. Working backwards from the latest verson of Chart.js (Version 4) I was able to find a version that was compatible with the browser (Version 2).
+After much anguish and frustration, trying to look for a new library that would be compatible with this antiquated browser, I was able to discuss my issue with one of my peers who suggested using an older version of the Chart.js library. Working backwards from the latest version of Chart.js (Version 4) I was able to find a version that was compatible with the browser (Version 2).
+
+Now that I was able to display charts within powerpoint, I had to be able to take in the votes from the websocket connection. This was new for me understanding how to take in data from a websocket connection, but after a little research I was able to get the graph moving to the incoming votes.
+
+Once I had the ability to manipulate the graph with votes it was time for the finishing touches on the powerpoint client. This included using an API that takes in a url and returns a QR code image. and the title being to the right and the voting to the left. This was all done using HTML and CSS. After it was all done I am pretty impressed with the final result especially with how close it resembles the mockup. This can be seen below.
+
+![Powerpoint client design mockup](/Docs/Final-Images/Final_PowerPoint_Client.png)
+
+<p align="center"><i>Figure 2: PowerPoint client Final Implimentation</i></p>
 
 ### Phase 2 Evaluation
+
+After another setback due to the limitations of Web Viewer, I was able to get a working interface that would react to incoming data. This however took far longer than I originally anticipated, which again had a knock on affect of the progress of the project. This combined with trying to fix issues that were not addressed within the previous phase put me behind schedule.
+
+This again highlights my inexperience when it comes to weighting tasks as I thought that it would take far less time than it actually did.
 
 ## Phase 3 Development
 
@@ -177,6 +191,8 @@ gantt
 
 ## Final Deliverable
 
+I present to you, Votley. The integrated voting system for powerpoint.
+
 ### Evaluation
 
 ### Future Work
@@ -192,8 +208,13 @@ I think even though this project didn't reach all of its goals, I still believe 
 - Consumer Insights, 2015. Attention spans, s.l.: Microsoft Canada, Spring.
 - Wallace, I., 2014. Talk-less teaching: practice, participation and progress. Crown House Publishing.
 - Buultjens, M., Aitken, S., Ravenscroft, J. and Carey, K., 1999. Size counts: The significance of size, font and style of print for readers with low vision sitting examinations. British Journal of Visual Impairment, 17(1), pp.5-10.
+- Iona, J., 2018. Mentimeter. School Librarian, 66(3), pp.153-154.
 
 ## Appendices
+
+### Links to Repositories
+
+- [GitHub Repository](https://github.com/Joshua-Yuill/Votley_Final-Year-Project)
 
 ### Meeting Notes
 
