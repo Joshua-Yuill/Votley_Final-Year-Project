@@ -27,7 +27,6 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
   - [Conclusion](#conclusion)
   - [References](#references)
   - [Appendices](#appendices)
-    - [Table of Appendices](#table-of-appendices)
     - [Meeting Notes](#meeting-notes)
     - [Communication History](#communication-history)
 
@@ -61,6 +60,8 @@ Some commercial solutions are already pre-existing and an analysis of such can b
 
 #### Mentimeter
 
+Mentimeter is 
+
 #### Poll Everywhere
 
 #### Kahoot
@@ -79,6 +80,8 @@ Mentimeter, Poll everywhere, Kahoot
 
 - As a student I would like a qr code to take me to the website, so that it is easily accessible from my mobile device without having to type in a long URL.
 
+- As a student with visual impairments, I would like for the voting application to be as readable as possible so that I can easily see the question and the options.
+
 ## Phase 1 Development
 
 ```mermaid
@@ -96,7 +99,7 @@ gantt
 
 //write about hardware, eg. phones computers. What version of powerpoint does it actually work on?
 
-After the meeting with Dale, we were able to determine a tool that would complement his teaching. The proposed idea was to make a voting system that would work within PowerPoint and would display feedback from students live within the presentation. We were unsure whether to make the method of voting a hardware-based device or a web-based client, but eventually settled on a web-based client due to the complexity and cost of a hardware-based solution.
+After the meeting with Dale, we were able to determine a tool that would complement his teaching. The proposed idea was to make a voting system that would work within PowerPoint and would display feedback from students live within the presentation. We were unsure whether to make the method of voting a hardware-based device or a web-based client, but eventually settled on a web-based client due to the complexity and cost of a hardware-based solution. This means students would use their phones or computers to interact with the vote.
 
 The first issue I encountered was being able to import webpages into PowerPoint. In older versions of PowerPoint using embedded objects was supported but has since been discontinued and made obsolete.
 
@@ -120,6 +123,22 @@ gantt
     Task in sec      :2014-01-12  , 12d
     another task      : 24d
 ```
+
+For this phase of development, I was focused on getting an interface functioning within powerpoint that would react to incoming data, as this was such a critical aspect of the project. I started off by mocking up a design that I would like for the final implementation to look similar too. This was mocked up inside a PowerPoint window to be able to really judge how the final design would look. This mockup can be seen below.
+
+![Powerpoint client design mockup](/Docs/Mockup-Images/PowerPoint_Mockup.png)
+
+<p style="text-align: center;"><i>Figure 1: PowerPoint client design mockup</i></p>
+
+I felt this design had some advantages based on our target audience, including:
+
+- The question is boldest and located at the centre of the design, where yours eyes are drawn to first. This keeps the focus on the question and not the results.
+- There are clear instructions at the top of the design, instructing the users on how they can participate in the vote. The instructions are clear and simple as to not cause any ambiguity.
+- The use of the auto-generated QR code allows for easy access to the voting page, without having to type in a long URL. This is a huge advantage not only for the students in terms of ease of access but also for the teacher as it reduces the amount of time spent on trying to navigate to the voting page.
+- The design dedicates half of the page to a graph displaying the outcome of the vote, this makes it not only easy for the students and teacher to see the progress of the vote, but for the teacher to discuss the outcome of the vote with the class in greater depth if necessary.
+- All fonts are a fork of the sans-serif font Helvetica ensuring that students with low vision can still read the text clearly (Buultjens, 1999). The colors of the graph are distinct and bold so that they can easily be distinguished from one another.
+
+I planned on using Chart.js for the live charts and wanted to ensure that worked also. I added the example to my Hello world page and loaded it. Nothing but a blank screen again. I tried it in my browser on my computer and there it was displaying; this was another Web Viewer issue. After digging around in the Web Viewer menus I discovered that it uses, Microsoft edge version 1.9.0.0, an old and no longer supported browser. Because of this it did not contain all the latest features in modern browsers such as Web Workers which was utilised within the Chart.js library. I was able to discuss my issue with one of my peers who suggested using an older version of the Chart.js library. I tried using version 2 of the library and it displayed within web viewer.
 
 ## Phase 3 Development
 
@@ -149,13 +168,9 @@ I think even though this project didn't reach all of its goals, I still believe 
  (Accessed on 2023-04-25)
 - Consumer Insights, 2015. Attention spans, s.l.: Microsoft Canada, Spring.
 - Wallace, I., 2014. Talk-less teaching: practice, participation and progress. Crown House Publishing.
+- Buultjens, M., Aitken, S., Ravenscroft, J. and Carey, K., 1999. Size counts: The significance of size, font and style of print for readers with low vision sitting examinations. British Journal of Visual Impairment, 17(1), pp.5-10.
 
 ## Appendices
-
-### Table of Appendices
-
-- [Meeting Notes](#meeting-notes)
-- [Communication History](#communication-history)
 
 ### Meeting Notes
 
