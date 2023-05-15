@@ -9,6 +9,7 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
 - [Individual Project – Integrated Voting Within PowerPoint](#individual-project--integrated-voting-within-powerpoint)
   - [Acknowledgements](#acknowledgements)
   - [Table of Contents](#table-of-contents)
+  - [Abstract](#abstract)
   - [Introduction](#introduction)
   - [Problem Analysis](#problem-analysis)
     - [Literature review](#literature-review)
@@ -20,15 +21,20 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Kahoot](#kahoot)
     - [User Stories](#user-stories)
   - [Phase 1 Development](#phase-1-development)
+    - [Phase 1 Evaluation](#phase-1-evaluation)
   - [Phase 2 Development](#phase-2-development)
+    - [Phase 2 Evaluation](#phase-2-evaluation)
   - [Phase 3 Development](#phase-3-development)
   - [Final Deliverable](#final-deliverable)
     - [Evaluation](#evaluation)
+    - [Future Work](#future-work)
   - [Conclusion](#conclusion)
   - [References](#references)
   - [Appendices](#appendices)
     - [Meeting Notes](#meeting-notes)
     - [Communication History](#communication-history)
+
+## Abstract
 
 ## Introduction
 
@@ -36,7 +42,7 @@ With our modern-day society with technology and our increasingly fast paced life
 
 ## Problem Analysis
 
-This solution was conceptualized working with the head of ICT at Sir Rodger Manwood's school. He wanted a way to increase interactivity within his lessons, without having to break the flow of the lesson, which could introduce disruption and slow down learning. He wanted a way to be able to ask questions to his students and get live feedback from them, without having to switch windows or utilize external tools.
+This solution was conceptualized working with the head of ICT at Sir Rodger Manwood's secondary school. He wanted a way to increase interactivity within his lessons, without having to break the flow of the lesson, which could introduce disruption and slow down learning. A tool to be able to ask questions to his students and get live feedback from them, without having to switch windows or utilize external tools.
 
 This is not only a good solution for just our client, but could be useful for teachers around the country. With PowerPoint being a staple in the modern classroom, this tool would easily integrate within the teachers current workflow and minimal additional knowledge would be required to use it. This is hugely beneficial as with marking and planning teachers have very little time to learn new tools and software.
 
@@ -97,7 +103,7 @@ gantt
     Build RestAPI server           :2022-10-04, 7d
 ```
 
-//write about hardware, eg. phones computers. What version of powerpoint does it actually work on?
+[//] # write about hardware, eg. phones computers. What version of powerpoint does it actually work on?
 
 After the meeting with Dale, we were able to determine a tool that would complement his teaching. The proposed idea was to make a voting system that would work within PowerPoint and would display feedback from students live within the presentation. We were unsure whether to make the method of voting a hardware-based device or a web-based client, but eventually settled on a web-based client due to the complexity and cost of a hardware-based solution. This means students would use their phones or computers to interact with the vote.
 
@@ -109,6 +115,12 @@ With Web Viewer added to my PowerPoint installation, I was ready and excited to 
 
 Now I just had to figure out why that worked, and the others didn’t. I made a basic Hello world webpage and hosted it on a web server that supported HTTPS. There it was it showed up.
 Ensuring Web Viewer Supported WebSocket’s was critical for my project, I added a simple web socket script to my Hello World page, that would just display on the page what it received. I sent the message and nothing. I tried it on my browser, and it worked. Web Viewer has no developer tools and no console, so I had no method of any feedback as to why it was not working. After a lot of trial and error I worked out that it required secure WebSocket’s. After setting up a domain to utilise secure WebSocket’s the messages appeared within Web Viewer.
+
+### Phase 1 Evaluation
+
+Looking back at the progress made in Phase 1, it was not as substantial as I first thought it was going to be. My inexperience in accurately sizing tasks to be completed led me to be over ambitious with the amount of work I could complete in the time frame. I was able to complete the research into the proposed idea and the research into the technology that would be used. I was also able to complete the development of the RestAPI server that would be used to send the data to the PowerPoint client.
+
+Issues began to arise in actually being able to display a webpage within Powerpoint. Working with microsoft's add-ins was completely new to me, and I naively assumed that it would work just like any other web browser would. This was not the case and as such had huge knock-on effects to the progress of the project as I was trying to overcome issues.
 
 ## Phase 2 Development
 
@@ -138,7 +150,13 @@ I felt this design had some advantages based on our target audience, including:
 - The design dedicates half of the page to a graph displaying the outcome of the vote, this makes it not only easy for the students and teacher to see the progress of the vote, but for the teacher to discuss the outcome of the vote with the class in greater depth if necessary.
 - All fonts are a fork of the sans-serif font Helvetica ensuring that students with low vision can still read the text clearly (Buultjens, 1999). The colors of the graph are distinct and bold so that they can easily be distinguished from one another.
 
-I planned on using Chart.js for the live charts and wanted to ensure that worked also. I added the example to my Hello world page and loaded it. Nothing but a blank screen again. I tried it in my browser on my computer and there it was displaying; this was another Web Viewer issue. After digging around in the Web Viewer menus I discovered that it uses, Microsoft edge version 1.9.0.0, an old and no longer supported browser. Because of this it did not contain all the latest features in modern browsers such as Web Workers which was utilised within the Chart.js library. I was able to discuss my issue with one of my peers who suggested using an older version of the Chart.js library. I tried using version 2 of the library and it displayed within web viewer.
+I planned on using Chart.js for the live charts and wanted to ensure that worked also. I added the example to my Hello world page and loaded it. Nothing but a blank screen again. I tried it in my browser on my computer and there it was displaying; this was another Web Viewer issue. 
+
+After digging around in the Web Viewer menus I discovered that it uses, Microsoft edge version 1.9.0.0, an old and no longer supported browser. Because of this it did not contain all the latest features in modern browsers such as Web Workers which was utilised within the Chart.js library.
+
+After much anguish and frustration, trying to look for a new library that would be compatible with this antiquated browser, I was able to discuss my issue with one of my peers who suggested using an older version of the Chart.js library. Working backwards from the latest verson of Chart.js (Version 4) I was able to find a version that was compatible with the browser (Version 2).
+
+### Phase 2 Evaluation
 
 ## Phase 3 Development
 
@@ -157,6 +175,8 @@ gantt
 ## Final Deliverable
 
 ### Evaluation
+
+### Future Work
 
 ## Conclusion
 
