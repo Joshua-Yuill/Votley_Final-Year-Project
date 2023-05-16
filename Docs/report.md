@@ -11,6 +11,8 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
   - [Table of Contents](#table-of-contents)
   - [Abstract](#abstract)
   - [Introduction](#introduction)
+  - [Aims](#aims)
+  - [Objective](#objective)
   - [Problem Analysis](#problem-analysis)
     - [Scope of the project](#scope-of-the-project)
     - [Literature review](#literature-review)
@@ -20,9 +22,10 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Mentimeter](#mentimeter)
       - [Poll Everywhere](#poll-everywhere)
       - [Kahoot](#kahoot)
+- [Describe what my users are](#describe-what-my-users-are)
     - [User Stories](#user-stories)
   - [Phase 1 Development](#phase-1-development)
-    - [Phase 1 Evaluation](#phase-1-evaluation)
+    - [Milestone Retrospective](#milestone-retrospective)
   - [Phase 2 Development](#phase-2-development)
     - [Phase 2 Evaluation](#phase-2-evaluation)
   - [Phase 3 Development](#phase-3-development)
@@ -37,14 +40,30 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
     - [Communication History](#communication-history)
 
 ## Abstract
+// Try to seperate the implimentation details - Sperate the what from the how. In ssoftware enjneering we create solutions for problems. Dale wants to engage the students more, not that he wants it in powerpoint
 
 ## Introduction
 
-With our modern-day society with technology and our increasingly fast paced lifestyle, it is becoming difficult to hold the attention of students while teaching (Consumer Insights, 2015). The aim of this project is to increase interactivity within lessons, without having to break the flow of the lesson, which could introduce disruption and slow down learning. My application will be a web-based voting tool that can be implemented directly within a PowerPoint presentation. It will accept votes from students on their individual devices and they will appear live in an active presentation, no need to switch windows or utilize external tools.
+With our modern-day society with technology and our increasingly fast paced lifestyle, it is becoming difficult to hold the attention of students while teaching (Consumer Insights, 2015). # Students focsing at school is the key point# The aim of this project is to increase interactivity within lessons, without having to break the flow of the lesson, which could introduce disruption and slow down learning. #Seemlessly intergrated participation tool that is intergatted into a teachers existing workflow # My application will be a web-based voting tool that can be implemented directly within a PowerPoint presentation. It will accept votes from students on their individual devices and they will appear live in an active presentation, no need to switch windows or utilize external tools.
+// Use Bullet points to make points, convey why those decions were made. from an engineering perspective.
+## Aims
+Aim = what you hope to achieve. Objective = the action(s) you will take in order to achieve the aim.
+
+Increase student patricipation
+
+## Objective
+
+Create a tool to intrate into existing workflow. Refrence educational thery about involving them
 
 ## Problem Analysis
 
 This solution was conceptualized working with the head of ICT at Sir Rodger Manwood's secondary school. He wanted a way to increase interactivity within his lessons, without having to break the flow of the lesson, which could introduce disruption and slow down learning. A tool to be able to ask questions to his students and get live feedback from them, without having to switch windows or utilize external tools.
+
+Not trying to build a full comercial solution, working with a teacher incremntaly proof of concept.
+
+Out of scope,
+Security and logins, can the students participate on a school network
+Monetisiation is out of scope - consider in conclusion. Discuss with the user the next step if the project would be to continued.
 
 ### Scope of the project
 
@@ -72,11 +91,23 @@ Some commercial solutions are already pre-existing and an analysis of such can b
 
 Mentimeter is a response tool that allows for the creation of interactive presentations. It allows for the creation of polls, quizzes, word clouds and more. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service (Iona,2018).
 
+- Live responces to open questions
+- What doesn't it have.
+- 
+
 #### Poll Everywhere
 
 #### Kahoot
 
 Mentimeter, Poll everywhere, Kahoot
+
+# Describe what my users are
+
+- Student
+- Classroom Teacher - Delivering the lesson
+- Person Setting up lesson (Heaad of depatment?)
+- How the data is used, senior ledership team
+- Number suer requirements
 
 ### User Stories
 
@@ -103,7 +134,7 @@ gantt
     Meet with Dale            :a1, 2022-09-27, 1d
     Research proposed idea            :2022-09-28, 8d
     Research Web Sockets           :2022-10-07, 7d
-    section Development
+    section Development # Get rid of catogorise
     Build RestAPI server           :2022-10-04, 7d
 ```
 
@@ -112,8 +143,11 @@ gantt
 After the meeting with Dale, we were able to determine a tool that would complement his teaching. The proposed idea was to make a voting system that would work within PowerPoint and would display feedback from students live within the presentation. We were unsure whether to make the method of voting a hardware-based device or a web-based client, but eventually settled on a web-based client due to the complexity and cost of a hardware-based solution. This means students would use their phones or computers to interact with the vote.
 
 The first issue I encountered was being able to import webpages into PowerPoint. In older versions of PowerPoint using embedded objects was supported but has since been discontinued and made obsolete.
+// Remove the me. List challenges, sucesses. 
 
 Researching ways to display webpages within PowerPoint was the first step. I found several executables online that promised to add live webpage functionality within Powerpoint, but they all seemed to only work with older versions of PowerPoint, which would have been no use to me as they were obsolete. I did not like this solution much also, due to the nature of having to install and trust someone else’s software within a sensitive environment like a school. This was when I stumbled upon the add in for PowerPoint called "Web Viewer" an official microsoft extension. The add-in promised to work with the latest version of PowerPoint which was perfect for my use case. Due to it being an official microsoft add-in, it was easily installable from the add-in store in PowerPoint. This I felt like was the most appropriate route to take, in terms of user experience, ease of installation and security.
+
+// there were plugins to do this with varying levels of sucess and compatability. Priority to prototype this flow. Everything is purpouseful, every line should convey. It is about the actions. Tell the story through actions
 
 With Web Viewer added to my PowerPoint installation, I was ready and excited to start. Before I installed Web Viewer, I had read some of the reviews contributing to the 1.9 out of 5 stars it has on the Microsoft store. “Doesn’t work with basic sites”, “Waste of time” and “Next to useless” (Microsoft Corporation, 2023) were just a few of the reviews I read. I wanted to ensure that I wasn’t going to have the same experience that those users had, so I loaded up a blank presentation, added the add in and typed in "www.google.com". Nothing. Maybe it doesn’t work with search engines I thought, so I navigated to "www.canterbury.ac.uk" still nothing. I had a problem. I noticed that it had a default URL in the search bar of "www.wikipedia.org" so I tried that and it worked. Now I just had to figure out why that worked, and the others didn’t. I made a basic Hello world webpage and hosted it on a web server that supported HTTPS. There it was it showed up. I knew I could display a webpage of some kind in PowerPoint, even if it was just a simple text page. This was a start.
 
@@ -121,7 +155,9 @@ Moving onto the RestAPI implementation, it went quite well. I chose to use FastA
 
 Ensuring Web Viewer Supported WebSocket’s was critical for my project, I added a simple web socket script to my Hello World page, that would just display on the page what it received. I sent the message and nothing. I tried it on my browser, and it worked. Web Viewer has no developer tools and no console, so I had no method of any feedback as to why it was not working. After a lot of trial and error and a lot of researching, I worked out that it required secure WebSocket’s. This was a huge setback as I now had to understand how to implement secure websockets. After a lot more research I was ready to try it with secure websockets and it worked. I was able to send a message from the server to the client and display it on the page. This was a huge milestone for me as it meant I could now send data from the server to the client. This meant my project was now possible.
 
-### Phase 1 Evaluation
+### Milestone Retrospective
+
+// Identidy learnings, both short term and long term, for next sprint or phase and then for wider practice
 
 Looking back at the progress made in Phase 1, it was not as substantial as I first thought it was going to be. My inexperience in accurately sizing tasks to be completed led me to be over ambitious with the amount of work I could complete in the time frame. I was able to complete the research into the proposed idea and the research into the technology that would be used. I was also able to complete the development of the RestAPI server that would be used to send the data to the PowerPoint client.
 
@@ -147,6 +183,8 @@ For this phase of development, I was focused on getting an interface functioning
 
 <p align="center"><i>Figure 1: PowerPoint client design mockup</i></p>
 
+// include screenshots and links of charts.js
+
 I felt this design had some advantages based on our target audience, including:
 
 - The question is boldest and located at the centre of the design, where yours eyes are drawn to first. This keeps the focus on the question and not the results.
@@ -167,7 +205,7 @@ Once I had the ability to manipulate the graph with votes it was time for the fi
 
 ![Powerpoint client design mockup](/Docs/Final-Images/Final_PowerPoint_Client.png)
 
-<p align="center"><i>Figure 2: PowerPoint client Final Implimentation</i></p>
+<p align="center"><i>Figure 2: PowerPoint client Final Implementation</i></p>
 
 ### Phase 2 Evaluation
 
@@ -197,9 +235,15 @@ I present to you, Votley. The integrated voting system for powerpoint.
 
 ### Future Work
 
+If I had more time on this project I like to implement a web cookie based system, that would limit the voter to 1 vote per question. This would be a huge improvement to the system as it would prevent students from voting multiple times on the same question.
+
+Not only this I would make a client where the teacher can login and set the questions, with each question getting its own unique URL and QR code. This would allow the teacher to set the questions before the class and add each of the questions to different slides within the powerpoint presentation.
+
+From a buisness perspective I would like to add customization options for the teacher, styling changes. The ability to add more than 3 options to vote on. All of these are features that would be contained within a premium version of the application.
+
 ## Conclusion
 
-I think even though this project didn't reach all of its goals, I still believe it was a huge success, as its main aim was to aid in learning, and throughout this project I have learnt many new skills
+I think even though this project didn't reach all of its goals, I still believe it was a huge success, as its main aim was to aid in learning, and throughout this project I have learnt many new skills and it has helped me to better evaluate a task and its complexity before starting it.
 
 ## References
 
