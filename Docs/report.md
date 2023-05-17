@@ -139,9 +139,11 @@ Mentimeter is a response tool that allows for the creation of interactive presen
 
 Features of the product:
 
-- Menti allows the creation of presentations
+- Menti allows the creation of presentations that have audience participation.
+- It has the ability to create polls, quizzes, word clouds and more.
+- Customisable themes and layouts.
 
-Features it is missing:
+Limitations:
 
 - It doesn't seamlessly integrate into existing workflows, you have to switch to a web browser.
 - No QR code to join support.
@@ -177,10 +179,12 @@ Poll Everywhere is a web-based application
 Features of the product:
 
 - Poll Everywhere integrates into PowerPoint
+- Has the ability to text in, to answer questions. Useful for situations with no internet access.
 
-Features it is missing:
+Limitations:
 
 - Doesn't have easy joining with QR codes
+- Requires administrator privileges to install separate executable application to work with PowerPoint
 
 #### Kahoot
 
@@ -203,11 +207,13 @@ Kahoot is a game-based learning solution (Wang, 2020) that allows users to creat
 
 Features of the product:
 
-- Kahoot allows the creation of quizzes and games
+- Kahoot allows the creation of quizzes and games.
+- Has a leaderboard for students to see their progress.
 
-Features it is missing:
+Limitations:
 
 - It doesn't seamlessly integrate into existing workflows, you have to switch to a web browser.
+- The question is not shown on the device of the user, they have to look up at the screen to see the question.
 
 ### User Profiles
 
@@ -282,7 +288,99 @@ After Wikipedia.org loaded successfully in the Web Viewer add in, the task was t
 
 #### RestAPI Server
 
-After researching potential frameworks for the RestAPI, FastAPI seemed to be the best option to use. This was due to its in-built error handling, its asynchronous nature and its robust websocket support. 2 POST endpoints were created, 2 GET endpoints and a Websocket endpoint. The POST endpoints were used to create and vote on the questions and the GET endpoints were used to retrieve the questions and a HTML page stating this is not a website. The websocket endpoint was used to send the results to the PowerPoint presentation so they would be able to update live. The data sent in the websocket was in JSON format, and contained the total vote count so that there was less client side processing.
+After researching potential frameworks for the RestAPI, FastAPI seemed to be the best option to use. This was due to its in-built error handling, its asynchronous nature and its robust websocket support. 2 POST endpoints were created, 2 GET endpoints and a Websocket endpoint. The POST endpoints were used to create and vote on the questions and the GET endpoints were used to retrieve the questions and a HTML page stating this is not a website. The websocket endpoint was used to send the results to the PowerPoint presentation so they would be able to update live. The data sent in the websocket was in JSON format, and contained the total vote count so that there was less client side processing. Creating the 2 POST and 2 GET endpoints were relatively simple and the code for which can be seen below.
+
+```python
+# Importing Libraries -----------------------------
+from fastapi import FastAPI, WebSocket
+from fastapi.responses import HTMLResponse
+from pydantic import BaseModel
+from collections import defaultdict
+from asyncio import Queue
+
+app = FastAPI() # Create a FastAPI instance
+
+#Pydantic Class Model ---------------------------
+class Question(BaseModel):
+    qTitle: str
+    qAnswers: list[str]
+    
+class Vote(BaseModel):
+    qResponse: int
+
+q = Queue() # Create a queue for the websocket connections
+
+responses = defaultdict(int) # Create a dictionary to store the responses
+questions = {}
+
+# Default Route ---------------------------------
+@app.get("/",response_class=HTMLResponse,status_code=200)
+async def Default():
+    return """
+    <html>
+        <head>
+            <title>I'm Sorry I think You're Lost....</title>
+        </head>
+        <body>
+            <h1>I'm Sorry I think You're Lost....</h1>
+            <h2>This is not the page you are looking for</h2>
+        </body>
+    </html>
+    """
+    
+# Post Question Route ----------------------------------------
+@app.post("/question")
+async def make_question(question: Question):
+    print("start")
+
+    questionTitle = question.dict() # Convert the question to a dictionary and store it in a variable
+    
+    max_value = max(questions, key=questions.get, default=0)
+    max_value = max_value + 1
+    questions[max_value] = dict(questionTitle) # Add the question to the questions dictionary
+    
+    return "Success",questions
+
+# Get Question Route ----------------------------------------
+@app.get("/question/")
+async def return_items():
+    print(questions)
+    return questions
+
+# Vote Acceptance Route ----------------------------------------
+@app.post("/response")
+async def accept_vote(vote: Vote):
+    
+    responses[vote.qResponse] += 1
+
+    await q.put(responses)
+    print(responses)
+    return "Success"
+```
+Votes can be sent to the `/response` endpoint in JSON format. An example of this can be seen below.
+
+```json
+{
+    "qResponse": 1
+}
+```
+This would add a vote to the question in the 1 position in the questions dictionary. This allows for an unlimited amount of questions to be asked and voted on.
+
+The websocket implementation was more complicated due to my inexperience with websockets. This required me to research into how websockets work and how to implement them in Python. The code for the websocket can be seen below.
+
+```python
+# Websocket Route ----------------------------------------
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    try:
+        while True: #ques put and get
+            data = await q.get() # Get the data from the queue
+            await websocket.send_json(data) # Send the data to the client
+            print("websocket", data)
+    except:
+        pass
+```
 
 // permalink to line of code. Include code snippets. Include Screenshots.
 
