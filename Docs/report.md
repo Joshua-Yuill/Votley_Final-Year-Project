@@ -113,7 +113,6 @@ The main concept behind 'Talk Less Teaching' is to increase the amount of time s
 
 Technology is an essential tool for teaching and learning in the 21st century (Muir-Herzig, 2004)
 
-
 Why and how is technology being used in the classroom. What are the benefits of using technology in the classroom.
 
 Yes the stakeholder does tell you what to do but the stakeholder tells you what path to go down.
@@ -216,7 +215,7 @@ Looking back at the progress made in Phase 1, it was not as substantial as I fir
 
 #### Long Term Learnings
 
-Looking what I have learned in this phase would be to not underestimate task sizes. Not only this, but I have also learned that what might not work for other people, doesn't mean it won't work for your use case, just set your expectations right. I have also learned that I need to be more proactive in asking for help when I am stuck, as I spent a lot of time trying to figure out why the Websocket connection was not being established, as it would have saved time if I had asked for help earlier.
+Reflecting on what I have learned in this phase, a key point for me would be to not underestimate task sizes. Not only this, but I have also learned that what might not work for other people, doesn't mean it won't work for your use case, just set your expectations right. I have also learned that I need to be more proactive in asking for help when I am stuck, as I spent a lot of time trying to figure out why the Websocket connection was not being established, as it would have saved time if I had asked for help earlier.
 
 ## Phase 2 Development
 
@@ -270,7 +269,7 @@ Working backwards from the latest version of Chart.js (Version 4) every version 
 
 #### Websockets to votes
 
-Now that I was able to display charts within powerpoint, I had to be able to take in the votes from the websocket connection. This was new for me understanding how to take in data from a websocket connection, but after a little research I was able to get the graph moving to the incoming votes.
+Now that charts were displaying within WebViewer, I had to be able to take in the votes from the websocket connection. This was new for me understanding how to take in data from a websocket connection, but after a little research I was able to get the graph moving to the incoming votes.
 
 Once I had the ability to manipulate the graph with votes it was time for the finishing touches on the powerpoint client. This included using an API that takes in a url and returns a QR code image. and the title being to the right and the voting to the left. This was all done using HTML and CSS. After it was all done I am pretty impressed with the final result especially with how close it resembles the mockup. This can be seen below.
 
