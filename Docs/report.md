@@ -364,6 +364,7 @@ Votes can be sent to the `/response` endpoint in JSON format. An example of this
     "qResponse": 1
 }
 ```
+
 This would add a vote to the question in the 1 position in the questions dictionary. This allows for an unlimited amount of questions to be asked and voted on.
 
 The websocket implementation was more complicated due to my inexperience with websockets. This required me to research into how websockets work and how to implement them in Python. The code for the websocket can be seen below.
@@ -382,7 +383,18 @@ async def websocket_endpoint(websocket: WebSocket):
         pass
 ```
 
-// permalink to line of code. Include code snippets. Include Screenshots.
+The websocket sends the vote count to the PowerPoint client in the JSON format. The websocket endpoint is `/ws`. The websocket endpoint is then connected to in the PowerPoint client. An example of the data sent to the PowerPoint client can be seen below.
+
+```json
+{
+    "1": 1,
+    "2": 3,
+    "3": 5,
+    "4": 0
+}
+```
+
+This means that the question in the 1 position has 1 vote, the question in the 2 position has 3 votes, the question in the 3 position has 5 votes and the question in the 4 position has 0 votes.
 
 #### Receiving Websockets
 
