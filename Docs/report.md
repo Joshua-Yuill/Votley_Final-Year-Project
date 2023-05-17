@@ -78,11 +78,18 @@ This solution was conceptualized working with the head of ICT at Sir Rodger Manw
 
 The aim of this project is to increase student participation within the lesson without disrupting the flow of the lesson. The solution should be accessible for both the teacher and the students, and should be easily integrated within the teachers existing workflow. The solution should be able to be used by teachers with minimal additional training and should be able to be used by students with no additional training.
 
+// Bulletpoints for aims and objectives. Things in scope and not in scope. Do not assume the, the reader is not me.
+
 ### Objective
 
 The objective of this project is to create a voting tool that is easily accessible and can integrate within the teachers existing workflow, in this case a voting tool that is accessible within PowerPoint.
 
-Refrence educational thery about involving them
+// Intergation with existing workflow
+// Classroom context, No logins needed
+// What are you using
+// Avoid Lengthy login processes
+
+Reference educational theory about involving them
 
 ### Scope of the project
 
@@ -125,16 +132,52 @@ Some commercial solutions are already pre-existing and an analysis of such can b
 
 Mentimeter is a response tool that allows for the creation of interactive presentations. It allows for the creation of polls, quizzes, word clouds and more. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service (Iona,2018). It allows live responses to open questions.
 
+> Screenshots of the application:
+> Presentation Display             |  Voting Display
+> :-------------------------:|:-------------------------:
+> ![Mentimeter](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/Menti%20Presentation%202.png) | <img src="./Refrence%20Images/Mentimeter/Menti%20Voting%20Screen.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+
+Features of the product:
+
+- Menti allows the creation of presentations
+
 Features it is missing:
 
 - It doesn't seamlessly integrate into existing workflows, you have to switch to a web browser.
 - No QR code to join support.
 
+// Include screenshots of the application
+// Limitations
+
+Break down what it is these solutions are doing.
+
+You focused on these features, becuase.
+
+Could it integrate into a spreadsheet.
+
+What is the problem how will it nbe used
+
 #### Poll Everywhere
+
+Poll Everywhere is a web-based application 
+
+> Screenshots of the application:
+> Presentation Display             |  Voting Display
+> :-------------------------:|:-------------------------:
+> ![Mentimeter](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/Menti%20Presentation%202.png) | <img src="./Refrence%20Images/Mentimeter/Menti%20Voting%20Screen.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
 
 #### Kahoot
 
-Mentimeter, Poll everywhere, Kahoot
+Kahoot is a game-based learning solution (Wang, 2020) that allows users to create quizzes and games for students to play. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service with enhanced features such as team vs team modes (Kahoot, 2020).
+
+> Screenshots of the application:
+> Presentation Display             |  Voting Display
+> :-------------------------:|:-------------------------:
+> ![Mentimeter](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/Menti%20Presentation%202.png) | <img src="./Refrence%20Images/Mentimeter/Menti%20Voting%20Screen.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+
+Features of the product:
+
+Features it is missing:
 
 ### User Profiles
 
@@ -145,6 +188,14 @@ Mentimeter, Poll everywhere, Kahoot
 - Number suer requirements
 
 ### User Stories
+
+// Need to be more specific //So that is KEY //List how we will know when we have achieved the user story question on the device needs to be synchronized while the lesson is in progress. The user doesn't actively need to select the question.
+
+//Include criteria for success. Link each user story to objective or aim.
+
+// Size tickets
+
+See the question on their device sychronized with the presentation.
 
 1. As a Student I want to be able to see the question that I am voting on, on my device so that I do not have to look up at the screen, so that I can focus on the question at hand.
 
@@ -203,9 +254,11 @@ After Wikipedia.org loaded successfully in the Web Viewer add in, the task was t
 
 After researching potential frameworks for the RestAPI, FastAPI seemed to be the best option to use. This was due to its in-built error handling, its asynchronous nature and its robust websocket support. 2 POST endpoints were created, 2 GET endpoints and a Websocket endpoint. The POST endpoints were used to create and vote on the questions and the GET endpoints were used to retrieve the questions and a HTML page stating this is not a website. The websocket endpoint was used to send the results to the PowerPoint presentation so they would be able to update live. The data sent in the websocket was in JSON format, and contained the total vote count so that there was less client side processing.
 
+// permalink to line of code. Include code snippets. Include Screenshots.
+
 #### Receiving Websockets
 
-After researching extensively into Websockets, it was found there are two types of Websockets, secure and insecure. Secure Websockets use the wss:// protocol and insecure Websockets use the ws:// protocol. The WebViewer add in for PowerPoint only supports secure Websockets, this is due to the fact that WebViewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. After changing the protocol to wss://, and creating all the relevant domain entries, the Websocket connection was established and data was being received. This could be seen appearing live in the presentation.
+After researching extensively into Websockets, it was found there are two types of Websockets, secure and insecure. Secure Websockets use the `wss://` protocol and insecure Websockets use the `ws://` protocol. The WebViewer add in for PowerPoint only supports secure Websockets, this is due to the fact that WebViewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. After changing the protocol to wss://, and creating all the relevant domain entries, the Websocket connection was established and data was being received. This could be seen appearing live in the presentation.
 
 ### Milestone Retrospective
 
@@ -214,6 +267,8 @@ After researching extensively into Websockets, it was found there are two types 
 Looking back at the progress made in Phase 1, it was not as substantial as I first thought it was going to be. My inexperience in accurately sizing tasks to be completed led me to be over ambitious with the amount of work I could complete in the time frame. I have learned that I need to more accurately size tasks that I have not done before, and give them a little more time, even if on the surface they seem quite easy. I was able to complete the research into the proposed idea and the research into the technology that would be used. I was also able to complete the development of the RestAPI server that would be used to send the data to the PowerPoint client.
 
 #### Long Term Learnings
+
+// link back to aims and objectives, double check markscheme
 
 Reflecting on what I have learned in this phase, a key point for me would be to not underestimate task sizes. Not only this, but I have also learned that what might not work for other people, doesn't mean it won't work for your use case, just set your expectations right. I have also learned that I need to be more proactive in asking for help when I am stuck, as I spent a lot of time trying to figure out why the Websocket connection was not being established, as it would have saved time if I had asked for help earlier.
 
@@ -242,6 +297,8 @@ Chart.Js seemed like the most appropriate library to use for showing the votes d
 Researching into WebViewer, it was found that it uses an old version of Microsoft Edge, version 1.9.0.0, an old and no longer supported browser. Because of this it did not contain all the latest features in modern browsers such as Web Workers which was utilised within the Chart.js library.
 
 After much anguish and frustration, trying to look for a new library that would be compatible with this antiquated browser, one of my peers suggested using an older version of the Chart.js library.
+
+Show Screenshots, Show experiments, show test data show the design
 
 ### Successes
 
@@ -329,6 +386,10 @@ I think even though this project didn't reach all of its goals, I still believe 
 - Wallace, I., 2014. Talk-less teaching: practice, participation and progress. Crown House Publishing.
 - Buultjens, M., Aitken, S., Ravenscroft, J. and Carey, K., 1999. Size counts: The significance of size, font and style of print for readers with low vision sitting examinations. British Journal of Visual Impairment, 17(1), pp.5-10.
 - Iona, J., 2018. Mentimeter. School Librarian, 66(3), pp.153-154.
+- Wang, A.I. and Tahir, R., 2020. The effect of using Kahoot! for learning–A literature review. Computers & Education, 149, p.103818.
+- Muir-Herzig, R. G., 2004. Technology and its impact in the classroom. Computers \& Education, 42(2), pp. 111--131.
+- Kahoot, 2020. What is Kahoot. [Online] Available at: https://kahoot.com/what-is-kahoot/ [Accessed 17 05 2023].
+
 
 ## Appendices
 
