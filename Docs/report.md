@@ -133,7 +133,7 @@ Some commercial solutions are already pre-existing and an analysis of such can b
 Mentimeter is a response tool that allows for the creation of interactive presentations. It allows for the creation of polls, quizzes, word clouds and more. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service (Iona,2018). It allows live responses to open questions.
 
 > Screenshots of the application:
-> Presentation Display             |  Voting Display
+> Mentimeter Presentation Display             |  Mentimeter Voting Display
 > :-------------------------:|:-------------------------:
 > ![Mentimeter](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/Menti%20Presentation%202.png) | <img src="./Refrence%20Images/Mentimeter/Menti%20Voting%20Screen.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
 
@@ -162,22 +162,52 @@ What is the problem how will it nbe used
 Poll Everywhere is a web-based application 
 
 > Screenshots of the application:
-> Presentation Display             |  Voting Display
+> Poll Everywhere Presentation Display             | Poll Everywhere Voting Display
 > :-------------------------:|:-------------------------:
-> ![Mentimeter](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/Menti%20Presentation%202.png) | <img src="./Refrence%20Images/Mentimeter/Menti%20Voting%20Screen.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+> ![Poll Everywhere Presentation](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/Poll%20Everywhere%20presentation%20screen.png) | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/Poll%20Everywhere%20Voting%20Screen.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+>
+> ---
+>
+> <p align="center"><b>Poll Everywhere In PowerPoint</b></p>
+>
+> ---
+> 
+> <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/Poll%20Everywhere%20PowerPoint.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" />
+
+Features of the product:
+
+- Poll Everywhere integrates into PowerPoint
+
+Features it is missing:
+
+- Doesn't have easy joining with QR codes
 
 #### Kahoot
 
 Kahoot is a game-based learning solution (Wang, 2020) that allows users to create quizzes and games for students to play. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service with enhanced features such as team vs team modes (Kahoot, 2020).
 
 > Screenshots of the application:
-> Presentation Display             |  Voting Display
+> Kahoot Joining Screen            |  Kahoot Mobile Display
 > :-------------------------:|:-------------------------:
-> ![Mentimeter](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/Menti%20Presentation%202.png) | <img src="./Refrence%20Images/Mentimeter/Menti%20Voting%20Screen.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+> ![Kahoot Joining](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Joining%20Screen.png) | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Join%20Screen%20Mobile.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+> <b>Kahoot Joined Member Screen</b> | <b>Kahoot Answer Screen</b>
+> ![Kahoot Joining](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Scoreboard%20Screen.png) | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Voting%20Screen%20Mobile.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+>
+> ---
+>
+> <p align="center"><b>Kahoot Question Screen</b></p>
+>
+> ---
+>
+> ![Kahoot Joining](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Question%20Screen.png)
 
 Features of the product:
 
+- Kahoot allows the creation of quizzes and games
+
 Features it is missing:
+
+- It doesn't seamlessly integrate into existing workflows, you have to switch to a web browser.
 
 ### User Profiles
 
