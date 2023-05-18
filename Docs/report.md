@@ -50,6 +50,9 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Short Term Learnings](#short-term-learnings-1)
       - [Long Term Learnings](#long-term-learnings-1)
   - [Phase 3 Development](#phase-3-development)
+    - [Successes](#successes-2)
+    - [Challenges](#challenges-2)
+      - [Contacting my client for feedback.](#contacting-my-client-for-feedback)
   - [Final Deliverable](#final-deliverable)
     - [Evaluation](#evaluation)
     - [Future Work](#future-work)
@@ -136,7 +139,7 @@ Mentimeter is a response tool that allows for the creation of interactive presen
 > Screenshots of the application:
 > Mentimeter Presentation Display             |  Mentimeter Voting Display
 > :-------------------------:|:-------------------------:
-> ![Mentimeter](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/Menti%20Presentation%202.png) | <img src="./Refrence%20Images/Mentimeter/Menti%20Voting%20Screen.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+> ![Mentimeter](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/Menti%20Presentation%202.png) | <img src="./Refrence%20Images/Mentimeter/Menti%20Voting%20Screen.jpg" data-canonical-src="Menti Voting Display" width="400" />
 
 Features of the product:
 
@@ -167,7 +170,7 @@ Poll Everywhere is a web-based application
 > Screenshots of the application:
 > Poll Everywhere Presentation Display             | Poll Everywhere Voting Display
 > :-------------------------:|:-------------------------:
-> ![Poll Everywhere Presentation](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/Poll%20Everywhere%20presentation%20screen.png) | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/Poll%20Everywhere%20Voting%20Screen.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+> ![Poll Everywhere Presentation](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/Poll%20Everywhere%20presentation%20screen.png) | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/Poll%20Everywhere%20Voting%20Screen.jpg" data-canonical-src="Poll Everywhere Voting Display" width="400" />
 >
 > ---
 >
@@ -175,7 +178,7 @@ Poll Everywhere is a web-based application
 >
 > ---
 > 
-> <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/Poll%20Everywhere%20PowerPoint.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" />
+> <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/../../Refrence%20Images/Poll%20Everywhere/Poll%20Everywhere%20PowerPoint.png" data-canonical-src="Poll Everywhere in powerpoint" />
 
 Features of the product:
 
@@ -194,9 +197,9 @@ Kahoot is a game-based learning solution (Wang, 2020) that allows users to creat
 > Screenshots of the application:
 > Kahoot Joining Screen            |  Kahoot Mobile Display
 > :-------------------------:|:-------------------------:
-> ![Kahoot Joining](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Joining%20Screen.png) | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Join%20Screen%20Mobile.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+> ![Kahoot Joining](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Joining%20Screen.png) | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Join%20Screen%20Mobile.jpg" data-canonical-src="Kahoot Mobile Display" width="400" />
 > <b>Kahoot Joined Member Screen</b> | <b>Kahoot Answer Screen</b>
-> ![Kahoot Joining](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Scoreboard%20Screen.png) | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Voting%20Screen%20Mobile.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+> ![Kahoot Joined](./Docs/../Refrence%20Images/Mentimeter/../../Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Scoreboard%20Screen.png) | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/Kahoot%20Screenshots/../../Refrence%20Images/Kahoot%20Screenshots/Kahoot%20Voting%20Screen%20Mobile.jpg" data-canonical-src="Kahoot answer" width="400" />
 >
 > ---
 >
@@ -484,7 +487,67 @@ For this phase of development, the focus was on getting an interface functioning
 
 #### Chart.JS Library
 
-Chart.Js seemed like the most appropriate library to use for showing the votes due to its ability to update live. To ensure its functionality within WebViewer, the default template was added to a HTTPS page and loaded. Nothing but a blank screen again. Testing it in a browser and it was displaying; This was another Web Viewer limitation.
+Chart.Js seemed like the most appropriate library to use for showing the votes in a bar graph style, due to its ability to update live. The Chart.js Library can be found [here](https://www.chartjs.org/), and an example of its capabilities can be seen below.
+
+> ![Chart.Js Example](./Refrence%20Images/Chart.Js/Example%20Bar%20Graph.png)
+> 
+> <p align="center"><i>Chart.Js Example Bar Graph (Chart.Js, 2023)</i></p> 
+
+This entire graph is generated using code and the Chart.js library.
+
+To ensure its functionality within WebViewer, the default template was added to a HTTPS page and loaded. The default template can be seen below.
+
+```HTML
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+  
+</body>
+</html>
+```
+
+<p align="center"><i>Chart.Js Getting Started Bar Graph Code (Chart.Js, 2023)</i></p>
+
+A comparison of the default template in a browser and in WebViewer can be seen below.
+
+>Chart.Js Example Code In Browser            |  Chart.Js Example Code In WebViewer
+> :-------------------------:|:-------------------------:
+> <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/../Refrence%20Images/Chart.Js/Chart.js%20Latest%20Browser.png" data-canonical-src="Chart.js In browser" width="400" /> | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/../Refrence%20Images/Chart.Js/Chart.js%20Latest%20WebViewer.png" data-canonical-src="Chart.js in WebViewer" width="400" />
+
+Nothing but a blank screen again. Testing it in a browser and it was displaying; This was another Web Viewer limitation.
 
 Researching into WebViewer, it was found that it uses an old version of Microsoft Edge, version 1.9.0.0, an old and no longer supported browser. Because of this it did not contain all the latest features in modern browsers such as Web Workers which was utilised within the Chart.js library.
 
@@ -550,6 +613,12 @@ gantt
     another task      : 24d
 ```
 
+### Successes
+
+### Challenges
+
+#### Contacting my client for feedback.
+
 ## Final Deliverable
 
 I present to you, Votley. The integrated voting system for powerpoint.
@@ -581,6 +650,10 @@ I think even though this project didn't reach all of its goals, I still believe 
 - Wang, A.I. and Tahir, R., 2020. The effect of using Kahoot! for learning–A literature review. Computers & Education, 149, p.103818.
 - Muir-Herzig, R. G., 2004. Technology and its impact in the classroom. Computers \& Education, 42(2), pp. 111--131.
 - Kahoot, 2020. What is Kahoot. [Online] Available at: https://kahoot.com/what-is-kahoot/ [Accessed 17 05 2023].
+- Chart.Js, 2023. Step-By-Step guide. [Online] 
+Available at: https://www.chartjs.org/docs/latest/getting-started/usage.html
+[Accessed 18 05 2023].
+
 
 
 ## Appendices
