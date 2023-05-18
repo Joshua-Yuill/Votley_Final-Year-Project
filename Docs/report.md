@@ -13,9 +13,9 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
   - [Introduction](#introduction)
   - [Problem Analysis](#problem-analysis)
     - [Aims](#aims)
-    - [Objective](#objective)
-    - [Scope of the project](#scope-of-the-project)
+    - [Objectives](#objectives)
     - [Outside of the scope of the project](#outside-of-the-scope-of-the-project)
+    - [Scope of the project](#scope-of-the-project)
     - [Literature review](#literature-review)
       - [Talk less Teaching](#talk-less-teaching)
       - [Technology and the Modern Classroom](#technology-and-the-modern-classroom)
@@ -50,15 +50,16 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Short Term Learnings](#short-term-learnings-1)
       - [Long Term Learnings](#long-term-learnings-1)
   - [Phase 3 Development](#phase-3-development)
+    - [Challenges](#challenges-2)
+      - [Contacting my client for feedback.](#contacting-my-client-for-feedback)
     - [Successes](#successes-2)
       - [Designing the voting interface](#designing-the-voting-interface)
       - [Creating the voting interface page](#creating-the-voting-interface-page)
-    - [Challenges](#challenges-2)
-      - [Contacting my client for feedback.](#contacting-my-client-for-feedback)
   - [Final Deliverable](#final-deliverable)
-    - [Evaluation](#evaluation)
+    - [Business case](#business-case)
     - [Future Work](#future-work)
   - [Conclusion](#conclusion)
+    - [Evaluation](#evaluation)
   - [References](#references)
   - [Appendices](#appendices)
     - [Links to Repositories](#links-to-repositories)
@@ -73,7 +74,6 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
 
 This proof of concept project, working in collaboration with Sir Rodger Manwood's School, is designed to engage students more within the classroom. The aim is to design a seamlessly integrated participation tool that can easily fit into a teachers existing workflow to help students to focus more within the classroom. Having to navigate to a separate website or application to participate in a lesson can be disruptive and can slow down the flow of the lesson.
 
-With our modern-day society with technology and our increasingly fast paced lifestyle, it is becoming difficult to hold the attention of students while teaching (Consumer Insights, 2015). The aim of this project is to increase interactivity within lessons, without having to break the flow of the lesson, which could introduce disruption and slow down learning. My application will be a web-based voting tool that can be implemented directly within a PowerPoint presentation. It will accept votes from students on their individual devices and they will appear live in an active presentation, no need to switch windows or utilize external tools.
 // Use Bullet points to make points, convey why those decides were made. from an engineering perspective.
 
 ## Problem Analysis
@@ -82,13 +82,38 @@ This solution was conceptualized working with the head of ICT at Sir Rodger Manw
 
 ### Aims
 
-The aim of this project is to increase student participation within the lesson without disrupting the flow of the lesson. The solution should be accessible for both the teacher and the students, and should be easily integrated within the teachers existing workflow. The solution should be able to be used by teachers with minimal additional training and should be able to be used by students with no additional training.
+The aims of this project are:
 
-// Bulletpoints for aims and objectives. Things in scope and not in scope. Do not assume the, the reader is not me.
+1. Increase student participation within the classroom.
+2. Avoid Disruption to the flow of the lesson.
+3. Be easily integrated within the teachers existing workflow.
+4. Be accessible for both the teacher and the students.
+5. Be able to be used by teachers with minimal additional training.
+6. Be able to be used by students with no additional training.
+7. Keep students engaged within the classroom.
+8. Get feedback from students of their understanding of the lesson.
 
-### Objective
+### Objectives
 
-The objective of this project is to create a voting tool that is easily accessible and can integrate within the teachers existing workflow, in this case a voting tool that is accessible within PowerPoint.
+The solution must have:
+
+- Be accessible within existing workflows, in this case PowerPoint.
+- Live update the results of the poll when a vote is received.
+- The votes should be shown in a graphical format.
+- The vote should be easily accessible to students.
+  
+The solution should have:
+
+- The ability to export vote data to excel.
+
+The solution could have:
+
+- Customizable themes.
+
+The solution won't have:
+
+- A login system
+- Any form of authentication
 
 // Intergation with existing workflow
 // Classroom context, No logins needed
@@ -97,24 +122,24 @@ The objective of this project is to create a voting tool that is easily accessib
 
 Reference educational theory about involving them
 
+### Outside of the scope of the project
+
+These are outside of the scope of this project but could be considered in the future.
+
+- Integration with other presentation software
+- Different chart types
+- Ability to add images to questions
+- Ability to setup multiple questions in 1 presentation
+
+Monetization is out of scope - consider in conclusion.
+
 ### Scope of the project
 
 This is not only a good solution for just our client, but could be useful for teachers around the country. With PowerPoint being a staple in the modern classroom, this tool would easily integrate within the teachers current workflow and minimal additional knowledge would be required to use it. This is hugely beneficial as with marking and planning teachers have very little time to learn new tools and software.
 
 To enable software to reach as many users as possible this software would be free with available extras at a monthly cost. Examples of some of extras could be, an unlimited amount of questions being created a day, or the ability to customize the color scheme to better suit the presentation. This would generate ongoing revenue for the company and would allow for the software to be maintained and updated.
 
-### Outside of the scope of the project
 
-These are outside of the scope of this project but could be considered in the future.
-
-- Security and logins
-- Monetization
-- Integration with other presentation software
-- Different chart types
-- Ability to add images to questions
-- Customization of the color scheme and layout
-
-Monetization is out of scope - consider in conclusion.
 
 ### Literature review
 
@@ -147,23 +172,22 @@ Features of the product:
 
 - Menti allows the creation of presentations that have audience participation.
 - It has the ability to create polls, quizzes, word clouds and more.
-- Customisable themes and layouts.
+- Customizable themes and layouts.
+- Allows the use of images as answers to questions.
 
 Limitations:
 
 - It doesn't seamlessly integrate into existing workflows, you have to switch to a web browser.
 - No QR code to join support.
-
-// Include screenshots of the application
-// Limitations
+- More of a presentation tool than a voting tool.
 
 Break down what it is these solutions are doing.
 
-You focused on these features, becuase.
+//You focused on these features, becuase.
 
-Could it integrate into a spreadsheet.
+//Could it integrate into a spreadsheet.
 
-What is the problem how will it nbe used
+//What is the problem how will it nbe used
 
 #### Poll Everywhere
 
@@ -186,11 +210,13 @@ Features of the product:
 
 - Poll Everywhere integrates into PowerPoint
 - Has the ability to text in, to answer questions. Useful for situations with no internet access.
+- Has a simple and easy to use interface.
 
 Limitations:
 
 - Doesn't have easy joining with QR codes
 - Requires administrator privileges to install separate executable application to work with PowerPoint
+- Has a very limited free tier in terms of the number of participants and questions that can be asked.
 
 #### Kahoot
 
@@ -215,19 +241,36 @@ Features of the product:
 
 - Kahoot allows the creation of quizzes and games.
 - Has a leaderboard for students to see their progress.
+- It allows for the use of images in questions.
+- Has the ability to join the game with a QR code.
+- Allows for the use of a nickname to join the game.
+- Able to export the results of the game to a spreadsheet.
 
 Limitations:
 
 - It doesn't seamlessly integrate into existing workflows, you have to switch to a web browser.
 - The question is not shown on the device of the user, they have to look up at the screen to see the question.
+- Doesn't seem very suited to a more mature audience. This has all the features that would make it ideal for a younger audience, bright colors, playful music, and a game-like interface.
 
 ### User Profiles
 
 - Student
-- Classroom Teacher - Delivering the lesson
-- Person Setting up lesson (Heaad of depatment?)
-- How the data is used, senior leadership team
-- Number suer requirements
+
+  - The student is the user that will be interacting with the voting application the most. They will be using the application to answer questions and participate in the lesson.
+  - This user is highly unlikely to use the application to create questions.
+
+- Classroom Teacher
+  
+  - The classroom teacher is the user that will be using the application within the lesson. They will see the students voting on the question and will be able to discuss results.
+  - This user my also want to use the application to create the questions for the lesson.
+
+- Head Of Department (HOD)
+
+  - The head of department is the user that will be using the application to create the questions for the lesson. They will be able to create the questions and add them to the presentation.
+
+- Senior Leadership Team (SLT)
+
+  - The senior leadership team is the user that will be using the application to view data from the lesson. They will be able to see the results of the questions and the answers that the students have given, to ensure the students are learning.
 
 ### User Stories
 
@@ -237,19 +280,42 @@ Limitations:
 
 // Size tickets
 
-See the question on their device sychronized with the presentation.
+See the question on their device synchronized with the presentation.
 
-1. As a Student I want to be able to see the question that I am voting on, on my device so that I do not have to look up at the screen, so that I can focus on the question at hand.
+1. As a Student I want to be able to see the question that I am voting on, on my device in synchronization with the lesson so that I do not have to look up at the screen or select the question allowing me to focus on the question at hand.
 
-2. As a classroom teacher, I would like to be able to add the vote to my presentations before the vote starts so that they are ready to be used in the lesson and can be added during my planning time.
+     - This user story will be achieved when the question is displayed on the device of the user, and the question is synchronized with the presentation.
+     - This user Story links to Aim: 
 
-3. As a teacher I would like for the voting application to have a simple look, as to not distract students away from the focus of the lesson.
+2. As a Head of Department, I would like to be able to add the vote to my presentations 3 days before the vote starts, so that they are ready to be used within the lesson when the slides are given to the classroom teacher and can be added during my planning time as this fits into my existing workflow.
 
-4. As a teacher I would like to be able to see the results of the vote in real time, so that the students can see their votes having an impact on the final tally.
+     - This user story will be achieved when the poll slide is able to be saved and recalled in PowerPoint, with no user intervention required.
+     - This user Story links to Aim: 
 
-5. As a student I would like a qr code to take me to the website, so that it is easily accessible from my mobile device without having to type in a long URL.
+3. As a Classroom Teacher I would like for the voting application to have a Large title and results shown so that it is easily discernable from the back of the classroom.
 
-6. As a student with visual impairments, I would like for the voting application to be as readable as possible so that I can easily see the question and the options.
+     - This user story will be achieved when the poll slide is able to be clearly seen from the back of the classroom.
+     - This user Story links to Aim: 
+
+4. As a Classroom Teacher I would like to be able to see the results of the currently presented vote in real time, so that the students can see their votes having an impact on the final tally and be able to discuss their decisions with the class.
+
+     - This user story will be achieved when the poll responds to the votes of the students in real time, and the results are displayed on the presentation.
+     - This user Story links to Aim: 
+
+5. As a Student I would like a qr code to be shown on the polling slide to take me to the website, so that it is easily and conveniently accessible from my mobile device without having to type in a long URL.
+
+     - This user story will be achieved when the poll presentation screen is able to generate a QR code that links to the voting client.
+     - This user Story links to Aim: 
+
+6. As a Student with visual impairments, I would like for the voting application and the presentation application to use accessible fonts so that I can easily see the question, the options and have the ability to participate like my peers.
+
+     - This user story will be achieved when the poll presentation screen is able to generate a QR code that links to the voting client.
+     - This user Story links to Aim: 
+
+7. As a Senior Leadership Team member, I would like to be able to see the results of the vote after the lesson has finished, so that I can see how the students have performed and if they have understood the lesson.
+
+     - This user story will be achieved when the poll is able to store the results of the vote and display them to the user after the lesson has finished. This could via a web interface or an Excel spreadsheet.
+     - This user Story links to Aim: 
 
 ## Phase 1 Development
 
@@ -281,6 +347,8 @@ Reading the reviews for the webview add in for PowerPoint, reviews were overwhel
 #### Websockets
 
 Websocket support was critical for this project as to enable the live updating feature. Creating a simple webpage that shows the data received through a websocket connection was easy enough, but the challenge was to get this data into PowerPoint. After loading the page in WebViewer, the websocket connection was not established. When tested within a browser the page worked fine. This was a limitation of the WebViewer add in for PowerPoint.
+
+// Include pages used for testing websocket connections and the results of those tests.
 
 ### Successes
 
@@ -457,6 +525,8 @@ In order to get a HTTPS certificate for the server, a domain name was purchased.
 
 Any requests to the subdomain "connection" would seem to be from a HTTPS source, allowing us to use the `wss://` protocol.
 
+// Include screenshot of the websocket connection in the PowerPoint client
+
 ### Milestone Retrospective
 
 #### Short Term Learnings
@@ -617,6 +687,10 @@ gantt
     another task      : 24d
 ```
 
+### Challenges
+
+#### Contacting my client for feedback.
+
 ### Successes
 
 #### Designing the voting interface
@@ -693,18 +767,15 @@ The code for this interface can be seen below.
 
 In order to give a better representation of the final product, the voting interface page was designed to look like more similar to the mockup design.
 
-
-### Challenges
-
-#### Contacting my client for feedback.
-
 ## Final Deliverable
 
 I present to you, Votley. The integrated voting system for powerpoint.
 
-### Evaluation
+// include screenshots of the final product and video of it working
 
-### Future Work
+
+
+
 
 If I had more time on this project I like to implement a web cookie based system, that would limit the voter to 1 vote per question. This would be a huge improvement to the system as it would prevent students from voting multiple times on the same question.
 
@@ -712,9 +783,17 @@ Not only this I would make a client where the teacher can login and set the ques
 
 From a business perspective I would like to add customization options for the teacher, styling changes. The ability to add more than 3 options to vote on. All of these are features that would be contained within a premium version of the application.
 
+### Business case
+
+### Future Work
+
 ## Conclusion
 
 I think even though this project didn't reach all of its goals, I still believe it was a huge success, as its main aim was to aid in learning, and throughout this project I have learnt many new skills and it has helped me to better evaluate a task and its complexity before starting it.
+
+// Speak about hitting aims and objectives
+
+### Evaluation
 
 ## References
 
