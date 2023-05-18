@@ -139,13 +139,11 @@ This is not only a good solution for just our client, but could be useful for te
 
 To enable software to reach as many users as possible this software would be free with available extras at a monthly cost. Examples of some of extras could be, an unlimited amount of questions being created a day, or the ability to customize the color scheme to better suit the presentation. This would generate ongoing revenue for the company and would allow for the software to be maintained and updated.
 
-
-
 ### Literature review
 
 #### Talk less Teaching
 
-The main concept behind 'Talk Less Teaching' is to increase the amount of time students are actively engaged in the lesson. This is done by reducing the amount of time the teacher is talking (Wallace, 2014). This gives the students time to not only absorb the information that has just been presented to them, but also develop their own understanding of the material.
+The main concept behind 'Talk Less Teaching' is to increase the amount of time students are actively engaged in the lesson. This is done by reducing the amount of time the teacher is talking (Wallace, 2014). This gives the students time to not only absorb the information that has just been presented to them, but also develop their own understanding of the material. By allowing students to take their own path through the material, they are able to make mistakes along the way and learn to deal with them, rather than just be told the correct path (McGrath, 2019). Students were found to be <i>"Significantly less attentive during teacher talk"</i> (Napoles, 2007). This shows that students are more engaged when they are actively participating in the lesson, rather than just being talked at. This is the main concept behind this project, to increase student participation within the classroom and allow the teacher to give students time to think.
 
 #### Technology and the Modern Classroom
 
@@ -807,8 +805,9 @@ In terms of the project hitting its objectives, in this regard it failed. I feel
 - Muir-Herzig, R. G., 2004. Technology and its impact in the classroom. Computers \& Education, 42(2), pp. 111--131.
 - Kahoot, 2020. What is Kahoot. [Online] Available at: https://kahoot.com/what-is-kahoot/ [Accessed 17 05 2023].
 - Chart.Js, 2023. Step-By-Step guide. [Online] 
-Available at: https://www.chartjs.org/docs/latest/getting-started/usage.html
-[Accessed 18 05 2023].
+Available at: https://www.chartjs.org/docs/latest/getting-started/usage.html [Accessed 18 05 2023].
+- McGrath, S., 2019. Talk Less So Students Learn More. Edutopia. Recuperado em, 16.
+- Napoles, J., 2007. The effect of duration of teacher talk on the attitude, attentiveness, and performance achievement of high school choral students. Research Perspectives in Music Education, 11(1), pp.22-29.
 
 
 
