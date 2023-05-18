@@ -55,10 +55,10 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
     - [Successes](#successes-2)
       - [Designing the voting interface](#designing-the-voting-interface)
       - [Creating the voting interface page](#creating-the-voting-interface-page)
-  - [Final Deliverable](#final-deliverable)
+  - [Conclusion](#conclusion)
+    - [Final Deliverable](#final-deliverable)
     - [Business case](#business-case)
     - [Future Work](#future-work)
-  - [Conclusion](#conclusion)
     - [Evaluation](#evaluation)
   - [References](#references)
   - [Appendices](#appendices)
@@ -767,33 +767,31 @@ The code for this interface can be seen below.
 
 In order to give a better representation of the final product, the voting interface page was designed to look like more similar to the mockup design.
 
-## Final Deliverable
+## Conclusion
+
+### Final Deliverable
 
 I present to you, Votley. The integrated voting system for powerpoint.
 
 // include screenshots of the final product and video of it working
 
+### Business case
 
+From a business perspective I could see an application like this being quite useful to teachers, purely because of its ease of implementation into their existing workflows 
 
-
+### Future Work
 
 If I had more time on this project I like to implement a web cookie based system, that would limit the voter to 1 vote per question. This would be a huge improvement to the system as it would prevent students from voting multiple times on the same question.
 
 Not only this I would make a client where the teacher can login and set the questions, with each question getting its own unique URL and QR code. This would allow the teacher to set the questions before the class and add each of the questions to different slides within the powerpoint presentation.
 
-From a business perspective I would like to add customization options for the teacher, styling changes. The ability to add more than 3 options to vote on. All of these are features that would be contained within a premium version of the application.
-
-### Business case
-
-### Future Work
-
-## Conclusion
-
-I think even though this project didn't reach all of its goals, I still believe it was a huge success, as its main aim was to aid in learning, and throughout this project I have learnt many new skills and it has helped me to better evaluate a task and its complexity before starting it.
-
 // Speak about hitting aims and objectives
 
 ### Evaluation
+
+I think even though this project didn't reach all of its goals, I still believe it was a huge success in terms of my own personal development. Throughout this project I have learnt many new skills, including helping me to better understand sizing tasks and dealing with having a client. I have learned not to underestimate tasks that at first glance seem simple, as they can often be more complex. I have also learned to better manage my time, as I feel I could have done a lot more if I had better time management and a rigid schedule.
+
+In terms of the project hitting its objectives, in this regard it failed. I feel my lack of understanding of technologies such as the WebViewer Add-In and websockets contributed greatly to a huge amount of delay in the project, due to me having to not only learn how they operate, but debug all of the unknown errors that came with them.
 
 ## References
 
