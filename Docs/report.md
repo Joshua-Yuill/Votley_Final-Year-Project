@@ -151,8 +151,6 @@ Technology is an essential tool for teaching and learning in the 21st century (M
 
 Why and how is technology being used in the classroom. What are the benefits of using technology in the classroom.
 
-Yes the stakeholder does tell you what to do but the stakeholder tells you what path to go down.
-
 ### Existing Similar Solutions
 
 Some commercial solutions are already pre-existing and an analysis of such can be found below.
