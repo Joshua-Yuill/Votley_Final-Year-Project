@@ -34,6 +34,7 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [WebViewer add in for PowerPoint](#webviewer-add-in-for-powerpoint)
       - [Viewing a webpage in WebViewer](#viewing-a-webpage-in-webviewer)
       - [RestAPI Server](#restapi-server)
+      - [Containerizing the RestAPI](#containerizing-the-restapi)
       - [Receiving Websockets](#receiving-websockets)
     - [Milestone Retrospective](#milestone-retrospective)
       - [Short Term Learnings](#short-term-learnings)
@@ -396,9 +397,60 @@ The websocket sends the vote count to the PowerPoint client in the JSON format. 
 
 This means that the question in the 1 position has 1 vote, the question in the 2 position has 3 votes, the question in the 3 position has 5 votes and the question in the 4 position has 0 votes.
 
+#### Containerizing the RestAPI
+
+In order to make the server easily deployable, it was decided to containerize the server. The server was containerized using Docker. This was done so that the server could easily be ran on any machine that had Docker installed. The Dockerfile used to containerize the server can be seen below.
+
+```dockerfile
+FROM python:slim
+RUN pip install fastapi uvicorn
+WORKDIR /app/
+COPY . .
+CMD ["uvicorn", "server:app", "--host", "0.0.0.0"]
+```
+
+A make file was then made to make the process of building and running the container easier. The make file can be seen below.
+
+```makefile
+DOCKER_IMAGE:=server
+help:
+	@echo "make <target>"
+	@echo "  help       Show this help"
+	@echo "  build      Build the server docker image"
+	@echo "  run 		Run the built image"
+build:
+	docker build --tag ${DOCKER_IMAGE} .
+
+run:
+	docker run --rm -it --publish 80:8000 ${DOCKER_IMAGE}
+```
+
+The make file can be ran by using the command `make build` to build the container and `make run` to run the container. The container can be accessed on port 80.
+
 #### Receiving Websockets
 
-After researching extensively into Websockets, it was found there are two types of Websockets, secure and insecure. Secure Websockets use the `wss://` protocol and insecure Websockets use the `ws://` protocol. The WebViewer add in for PowerPoint only supports secure Websockets, this is due to the fact that WebViewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. After changing the protocol to wss://, and creating all the relevant domain entries, the Websocket connection was established and data was being received. This could be seen appearing live in the presentation.
+After researching extensively into Websockets, it was found there are two types of Websockets, secure and insecure. Secure Websockets use the `wss://` protocol and insecure Websockets use the `ws://` protocol. The WebViewer add in for PowerPoint only supports secure Websockets, this is due to the fact that WebViewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. The adapted code for the Websocket connection can be seen below.
+
+```python
+# Websocket Route ----------------------------------------
+@app.websocket("/wss")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    try:
+        while True: #ques put and get
+            data = await q.get() # Get the data from the queue
+            await websocket.send_json(data) # Send the data to the client
+            print("websocket", data)
+    except:
+        pass
+```
+
+In order to get a HTTPS certificate for the server, a domain name was purchased. This domain was then proxied to the server using cloudflare. An A record was created for the subdomain "connection". The record created in cloudflare can be seen below.
+
+> ![Cloudflare A Record](./Refrence%20Images/Cloudflare/DNS%20Record%20Created.png)
+> <p align="center"><i>A record created in cloudflare</i></p>
+
+Any requests to the subdomain "connection" would seem to be from a HTTPS source, allowing us to use the `wss://` protocol.
 
 ### Milestone Retrospective
 
@@ -445,9 +497,9 @@ Show Screenshots, Show experiments, show test data show the design
 #### Design
 To start  a design was mocked up that would hopefully represent what the final implementation will look similar too. This was mocked up inside a PowerPoint window to be able to really judge how the final design would look. This mockup can be seen below.
 
-![Powerpoint client design mockup](/Docs/Mockup-Images/PowerPoint_Mockup.png)
-
-<p align="center"><i>Figure 1: PowerPoint client design mockup</i></p>
+>![Powerpoint client design mockup](/Docs/Mockup-Images/PowerPoint_Mockup.png)
+>
+><p align="center"><i>Figure 1: PowerPoint client design mockup</i></p>
 
 // include screenshots and links of charts.js
 
@@ -470,9 +522,9 @@ Now that charts were displaying within WebViewer, I had to be able to take in th
 
 Once I had the ability to manipulate the graph with votes it was time for the finishing touches on the powerpoint client. This included using an API that takes in a url and returns a QR code image. and the title being to the right and the voting to the left. This was all done using HTML and CSS. After it was all done I am pretty impressed with the final result especially with how close it resembles the mockup. This can be seen below.
 
-![Powerpoint client design mockup](/Docs/Final-Images/Final_PowerPoint_Client.png)
-
-<p align="center"><i>Figure 2: PowerPoint client Final Implementation</i></p>
+>![Powerpoint client design mockup](/Docs/Final-Images/Final_PowerPoint_Client.png)
+>
+><p align="center"><i>PowerPoint client Final Implementation</i></p>
 
 ### Phase 2 Evaluation
 
