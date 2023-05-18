@@ -23,9 +23,13 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Mentimeter](#mentimeter)
       - [Poll Everywhere](#poll-everywhere)
       - [Kahoot](#kahoot)
-    - [User Profiles](#user-profiles)
+    - [Users](#users)
+  - [Software Design Analysis](#software-design-analysis)
     - [User Stories](#user-stories)
+    - [Development Methodology](#development-methodology)
+    - [Technology Selection](#technology-selection)
   - [Phase 1 Development](#phase-1-development)
+    - [Goals For Phase 1](#goals-for-phase-1)
     - [Challenges](#challenges)
       - [Importing webpages into PowerPoint](#importing-webpages-into-powerpoint)
       - [WebViewer Limitations](#webviewer-limitations)
@@ -40,6 +44,7 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Short Term Learnings](#short-term-learnings)
       - [Long Term Learnings](#long-term-learnings)
   - [Phase 2 Development](#phase-2-development)
+    - [Goals for phase 2](#goals-for-phase-2)
     - [Challenges](#challenges-1)
       - [Chart.JS Library](#chartjs-library)
     - [Successes](#successes-1)
@@ -72,7 +77,7 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
 
 ## Introduction
 
-This proof of concept project, working in collaboration with Sir Rodger Manwood's School, is designed to engage students more within the classroom. The aim is to design a seamlessly integrated participation tool that can easily fit into a teachers existing workflow to help students to focus more within the classroom. Having to navigate to a separate website or application to participate in a lesson can be disruptive and can slow down the flow of the lesson.
+This proof of concept project, working in collaboration with Sir Rodger Manwood's School, is designed to engage students with an age range of 12 - 18 more within the classroom. The aim is to design a seamlessly integrated participation tool that can easily fit into a teachers existing workflow to help students to focus more within the classroom. Having to navigate to a separate website or application to participate in a lesson can be disruptive and can slow down the flow of the lesson.
 
 // Use Bullet points to make points, convey why those decides were made. from an engineering perspective.
 
@@ -104,7 +109,7 @@ The solution must have:
   
 The solution should have:
 
-- The ability to export vote data to excel.
+- The ability to export vote data to excel. // The data is portable, accessible
 
 The solution could have:
 
@@ -115,7 +120,7 @@ The solution won't have:
 - A login system
 - Any form of authentication
 
-// Intergation with existing workflow
+// Integration with existing workflow
 // Classroom context, No logins needed
 // What are you using
 // Avoid Lengthy login processes
@@ -127,9 +132,8 @@ Reference educational theory about involving them
 These are outside of the scope of this project but could be considered in the future.
 
 - Integration with other presentation software
-- Different chart types
+- Different chart types // Diffrerent chart types // No need for loads of user testing due to it not being used by a wider audience. The user is going to be trained in part of the development process. Text based, used by 1 user
 - Ability to add images to questions
-- Ability to setup multiple questions in 1 presentation
 
 Monetization is out of scope - consider in conclusion.
 
@@ -153,11 +157,11 @@ Why and how is technology being used in the classroom. What are the benefits of 
 
 ### Existing Similar Solutions
 
-Some commercial solutions are already pre-existing and an analysis of such can be found below.
+Some commercial solutions are already pre-existing and an analysis of such can be found below. // Make this a naritive. Has somebody solved this problem before? Try to describe what it is that I am doing. Investigating software so that I can get ideas from features available
 
 #### Mentimeter
 
-Mentimeter is a response tool that allows for the creation of interactive presentations. It allows for the creation of polls, quizzes, word clouds and more. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service (Iona,2018). It allows live responses to open questions.
+Mentimeter is a response tool that allows for the creation of interactive presentations. It allows for the creation of polls, quizzes, word clouds and more. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service (Iona,2018). It allows live responses to open questions. Mentimeter allows the use of may different question types, including bar graphs// Lots of diffrent question types. Include more detail
 
 > Screenshots of the application:
 > Mentimeter Presentation Display             |  Mentimeter Voting Display
@@ -166,7 +170,7 @@ Mentimeter is a response tool that allows for the creation of interactive presen
 
 Features of the product:
 
-- Menti allows the creation of presentations that have audience participation.
+- Menti allows the creation of presentations that have audience participation. // Presentations and questions intertwined. Logs of filling in.
 - It has the ability to create polls, quizzes, word clouds and more.
 - Customizable themes and layouts.
 - Allows the use of images as answers to questions.
@@ -174,8 +178,8 @@ Features of the product:
 Limitations:
 
 - It doesn't seamlessly integrate into existing workflows, you have to switch to a web browser.
-- No QR code to join support.
-- More of a presentation tool than a voting tool.
+- No QR code to join support. // It does have
+- More of a presentation tool than a voting tool. // Not really
 
 Break down what it is these solutions are doing.
 
@@ -211,8 +215,10 @@ Features of the product:
 Limitations:
 
 - Doesn't have easy joining with QR codes
-- Requires administrator privileges to install separate executable application to work with PowerPoint
+- Requires administrator privileges to install separate executable application to work with PowerPoint, this can be found [here](https://www.polleverywhere.com/app/powerpoint/win)// Name the extension required and add the link to it
 - Has a very limited free tier in terms of the number of participants and questions that can be asked.
+- Doesn't have a leaderboard feature.
+- Quite Bland design.
 
 #### Kahoot
 
@@ -248,7 +254,7 @@ Limitations:
 - The question is not shown on the device of the user, they have to look up at the screen to see the question.
 - Doesn't seem very suited to a more mature audience. This has all the features that would make it ideal for a younger audience, bright colors, playful music, and a game-like interface.
 
-### User Profiles
+### Users
 
 - Student
 
@@ -268,15 +274,15 @@ Limitations:
 
   - The senior leadership team is the user that will be using the application to view data from the lesson. They will be able to see the results of the questions and the answers that the students have given, to ensure the students are learning.
 
+// Where does analysis stop. This is design. Might need to have a title here called design. Need to talk about project overall, Technical Phesability. Need to discuss implimentation approach
+
+## Software Design Analysis
+
 ### User Stories
 
 // Need to be more specific //So that is KEY //List how we will know when we have achieved the user story question on the device needs to be synchronized while the lesson is in progress. The user doesn't actively need to select the question.
 
-//Include criteria for success. Link each user story to objective or aim.
-
 // Size tickets
-
-See the question on their device synchronized with the presentation.
 
 1. As a Student I want to be able to see the question that I am voting on, on my device in synchronization with the lesson so that I do not have to look up at the screen or select the question allowing me to focus on the question at hand.
 
@@ -313,6 +319,26 @@ See the question on their device synchronized with the presentation.
      - This user story will be achieved when the poll is able to store the results of the vote and display them to the user after the lesson has finished. This could via a web interface or an Excel spreadsheet.
      - This user Story links to Aim: 
 
+### Development Methodology
+
+This project will be utilizing the agile methodology. This methodology utilizes a series of "sprints" to develop the solution. The most important factor in the agile methodology is client satisfaction (McCormick, 2012). This project will have 3 main phases, these are:
+
+- Phase 1: September to January
+- Phase 2 January to March
+- Phase 3 March to May
+
+Each of these phases will have a series of sprints, these sprints will be 2 weeks long. Each sprint will have a series of tasks that will be completed within the sprint. By using this methodology, it will allow for client feedback to help guide this project incrementally.
+
+### Technology Selection
+
+The software stack that will be used for this project is:
+
+- FastAPI for the RestAPI server. This will handle incoming requests from the voting client and sending out data to the presentation client.
+- Websockets for the communication between the voting client and the presentation client. This will allow for real time updates to the presentation client.
+- Docker will be to containerize the application. This will allow for the application to be easily deployed to a server.
+- chart.js will be used to display the results of the vote to the user in a graph-based representation.
+- vue.js will be used on the voting client to communicate with the RestAPI server.
+
 ## Phase 1 Development
 
 ```mermaid
@@ -323,10 +349,16 @@ gantt
     Draft Ideas to Bring to Meeting           :a1, 2022-09-25, 2d
     Meet with Dale            :a1, 2022-09-27, 1d
     Research proposed idea            :2022-09-28, 8d
-    Research Web Sockets           :2022-10-07, 7d
-    section Development # Get rid of catogorise
+    Research Web Sockets           :2022-10-07, 7d 
     Build RestAPI server           :2022-10-04, 7d
-```
+``` 
+
+### Goals For Phase 1
+
+- Meet with the client to discuss the project and determine the requirements.
+- Research the proposed solution and determine if it is feasible.
+- Create the API server for the voting system.
+- Research web sockets and their implementation.
 
 After the meeting with Dale, we were able to determine a tool that would compliment his teaching. The proposed solution was to implement a voting system that would work within PowerPoint and would display feedback from students live within the PowerPoint presentation. The method of voting was as of yet undecided between a hardware-based device or a web-based client, but eventually settled on a web-based client due to the complexity and cost of a hardware-based solution. This means students would be able to use their phones or computers to interact with the voting system.
 
@@ -358,7 +390,7 @@ After Wikipedia.org loaded successfully in the Web Viewer add in, the task was t
 
 #### RestAPI Server
 
-After researching potential frameworks for the RestAPI, FastAPI seemed to be the best option to use. This was due to its in-built error handling, its asynchronous nature and its robust websocket support. 2 POST endpoints were created, 2 GET endpoints and a Websocket endpoint. The POST endpoints were used to create and vote on the questions and the GET endpoints were used to retrieve the questions and a HTML page stating this is not a website. The websocket endpoint was used to send the results to the PowerPoint presentation so they would be able to update live. The data sent in the websocket was in JSON format, and contained the total vote count so that there was less client side processing. Creating the 2 POST and 2 GET endpoints were relatively simple and the code for which can be seen below.
+The first step in creating the RestAPI was importing the required frameworks and libraries. FastAPI was used to create the RestAPI server. Pydantic was used to create the models for the data that would be sent to the server. By using Pydantic data models data received can be validated and error checked automatically, a feature of the FastAPI framework. 
 
 ```python
 # Importing Libraries -----------------------------
@@ -377,12 +409,25 @@ class Question(BaseModel):
     
 class Vote(BaseModel):
     qResponse: int
+```
 
-q = Queue() # Create a queue for the websocket connections
+CORS middleware was added to the server to allow for cross origin requests. This is required as the voting client will be hosted on a different server to the RestAPI server. CORS middleware was added to the server by using the following code.
 
-responses = defaultdict(int) # Create a dictionary to store the responses
-questions = {}
+```python
+#----------------------------------------------------
+app.add_middleware(
+CORSMiddleware,
+allow_origins=["*"], # Allows all origins
+allow_credentials=True,
+allow_methods=["*"], # Allows all methods
+allow_headers=["*"], # Allows all headers
+)
+#----------------------------------------------------
+```
 
+A default route was created to handle any requests that go to the root of the url. This route returns a simple HTML page that displays a message to the user informing them this is an incorrect url.
+
+```python
 # Default Route ---------------------------------
 @app.get("/",response_class=HTMLResponse,status_code=200)
 async def Default():
@@ -397,7 +442,13 @@ async def Default():
         </body>
     </html>
     """
-    
+```
+
+ This endpoint accepts a JSON object that is validated against the Question model. If the JSON object is valid, it is added to the questions dictionary. The key for the question is the length of the dictionary, which is incremented by one each time a question is added. This allows for the questions to be stored in a sequential order.
+
+```python
+questions = {}
+
 # Post Question Route ----------------------------------------
 @app.post("/question")
 async def make_question(question: Question):
@@ -408,14 +459,30 @@ async def make_question(question: Question):
     max_value = max(questions, key=questions.get, default=0)
     max_value = max_value + 1
     questions[max_value] = dict(questionTitle) # Add the question to the questions dictionary
+
+    print(questions)
     
     return "Success",questions
+```
 
-# Get Question Route ----------------------------------------
-@app.get("/question/")
-async def return_items():
-    print(questions)
-    return questions
+An example of accepted JSON can be seen below.
+
+```json
+{
+    "qTitle": "What is your favorite color?",
+    "qAnswers": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+    ]
+}
+```
+
+The next step was to create an endpoint to accept votes. This endpoint accepts a JSON object that is validated against the Vote model. If the JSON object is valid, it is added to the responses dictionary. The key for the response is the value of the qResponse key in the JSON object. This allows for the responses to be stored in a sequential order.
+
+```python
+responses = defaultdict(int) # Create a dictionary to store the responses
 
 # Vote Acceptance Route ----------------------------------------
 @app.post("/response")
@@ -427,7 +494,8 @@ async def accept_vote(vote: Vote):
     print(responses)
     return "Success"
 ```
-Votes can be sent to the `/response` endpoint in JSON format. An example of this can be seen below.
+
+Votes are accepted in the following JSON format.
 
 ```json
 {
@@ -435,11 +503,38 @@ Votes can be sent to the `/response` endpoint in JSON format. An example of this
 }
 ```
 
-This would add a vote to the question in the 1 position in the questions dictionary. This allows for an unlimited amount of questions to be asked and voted on.
+In this case, this would be a vote for the answer in position 1 of the qAnswers list. I did it this way to allow for an unlimited amount of answers to be offered.
 
-The websocket implementation was more complicated due to my inexperience with websockets. This required me to research into how websockets work and how to implement them in Python. The code for the websocket can be seen below.
+The final step was to create an endpoint to return the questions. This endpoint returns the questions dictionary in JSON format.
 
 ```python
+# Get Question Route ----------------------------------------
+@app.get("/question/")
+async def return_question():
+    print(questions)
+    return questions
+```
+an example of the JSON response from this endpoint can be seen below.
+
+```json
+{
+    "1": {
+        "qTitle": "What is your favorite color?",
+        "qAnswers": [
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"
+        ]
+    },
+}
+```
+
+The websocket implementation was more complicated due to my inexperience with websockets. This required research into how websockets work and how to implement them in Python. The code for the websocket can be seen below.
+
+```python
+q = Queue() # Create a queue for the websocket connections
+
 # Websocket Route ----------------------------------------
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
@@ -453,7 +548,7 @@ async def websocket_endpoint(websocket: WebSocket):
         pass
 ```
 
-The websocket sends the vote count to the PowerPoint client in the JSON format. The websocket endpoint is `/ws`. The websocket endpoint is then connected to in the PowerPoint client. An example of the data sent to the PowerPoint client can be seen below.
+The websocket endpoint awaits a websocket connection request on the `/ws` endpoint and accepts one when it is received. The loop is used to continually receive data from the queue and send it to the client. The data is then retrieved from the queue and sent to the client in JSON format. An example of the JSON data sent to the presentation client can be seen below.
 
 ```json
 {
@@ -464,11 +559,15 @@ The websocket sends the vote count to the PowerPoint client in the JSON format. 
 }
 ```
 
+// Design assumptions
+
 This means that the question in the 1 position has 1 vote, the question in the 2 position has 3 votes, the question in the 3 position has 5 votes and the question in the 4 position has 0 votes.
 
 #### Containerizing the RestAPI
 
-In order to make the server easily deployable, it was decided to containerize the server. The server was containerized using Docker. This was done so that the server could easily be ran on any machine that had Docker installed. The Dockerfile used to containerize the server can be seen below.
+// Slim out the unnessasary words // .
+
+In order to make the server easily deployable, the server was containerized using docker. The Dockerfile used to containerize the server can be seen below.
 
 ```dockerfile
 FROM python:slim
@@ -498,6 +597,8 @@ The make file can be ran by using the command `make build` to build the containe
 
 #### Receiving Websockets
 
+Development log. You actually built something. Next phase, next date. these things were not identifed so had to cover this thing. have dates and milestones. Have it as developemnt log. by date
+
 After researching extensively into Websockets, it was found there are two types of Websockets, secure and insecure. Secure Websockets use the `wss://` protocol and insecure Websockets use the `ws://` protocol. The WebViewer add in for PowerPoint only supports secure Websockets, this is due to the fact that WebViewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. The adapted code for the Websocket connection can be seen below.
 
 ```python
@@ -525,7 +626,13 @@ Any requests to the subdomain "connection" would seem to be from a HTTPS source,
 
 ### Milestone Retrospective
 
+// Did we fufill the goals, yes no, patial. We can record votes using a an api. its viewable live
+
 #### Short Term Learnings
+
+// compare goals in the begining of the phase and to what was actually achieved.
+
+// Re evaluate this
 
 Looking back at the progress made in Phase 1, it was not as substantial as I first thought it was going to be. My inexperience in accurately sizing tasks to be completed led me to be over ambitious with the amount of work I could complete in the time frame. I have learned that I need to more accurately size tasks that I have not done before, and give them a little more time, even if on the surface they seem quite easy. I was able to complete the research into the proposed idea and the research into the technology that would be used. I was also able to complete the development of the RestAPI server that would be used to send the data to the PowerPoint client.
 
@@ -548,6 +655,8 @@ gantt
     Task in sec      :2014-01-12  , 12d
     another task      : 24d
 ```
+
+### Goals for phase 2
 
 For this phase of development, the focus was on getting an interface functioning within powerpoint that would react to incoming data, as this was such a critical aspect of the project.
 
@@ -691,6 +800,8 @@ gantt
 
 #### Designing the voting interface
 
+// Include goals. Do not include design cosiderations
+
 In order to design the voting interface, consideration had to be taken into account for the target audience. To ensure the solution remains accessible and the design language the same, the font used within the PowerPoint client was used within the voting interface. This font is Helvetica, a sans-serif font that is easy to read for people with low vision (Buultjens, 1999). This satisfies user requirement 6.
 In order to ensure consistency between the PowerPoint client and the voting interface, the same color pallet was used. This makes it easy to identify what answer corresponds to what color.
 The design is simple and displays the question being asked at the top of the screen, with the options to chose from bellow. This makes it easy for the user to understand what they are voting for and what options they have to chose from.
@@ -773,7 +884,7 @@ I present to you, Votley. The integrated voting system for powerpoint.
 
 ### Business case
 
-From a business perspective I could see an application like this being quite useful to teachers, purely because of its ease of implementation into their existing workflows 
+From a business perspective I could see an application like this being useful to teachers, purely because of its ease of implementation into their existing workflows // be careful with meaningless empty words. // Look at it like a word budget
 
 ### Future Work
 
@@ -806,8 +917,11 @@ In terms of the project hitting its objectives, in this regard it failed. I feel
 Available at: https://www.chartjs.org/docs/latest/getting-started/usage.html [Accessed 18 05 2023].
 - McGrath, S., 2019. Talk Less So Students Learn More. Edutopia. Recuperado em, 16.
 - Napoles, J., 2007. The effect of duration of teacher talk on the attitude, attentiveness, and performance achievement of high school choral students. Research Perspectives in Music Education, 11(1), pp.22-29.
+- McCormick, M., 2012. Waterfall vs. Agile methodology. MPCS, N/A, 3.
 
+// Start to talk about what the next phase of development would be, how would you test it.  Would you would do. How to test it. 6th form class. What would the plan be
 
+// Maybe find better pdf
 
 ## Appendices
 
