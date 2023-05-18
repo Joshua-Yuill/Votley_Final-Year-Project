@@ -51,6 +51,8 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Long Term Learnings](#long-term-learnings-1)
   - [Phase 3 Development](#phase-3-development)
     - [Successes](#successes-2)
+      - [Designing the voting interface](#designing-the-voting-interface)
+      - [Creating the voting interface page](#creating-the-voting-interface-page)
     - [Challenges](#challenges-2)
       - [Contacting my client for feedback.](#contacting-my-client-for-feedback)
   - [Final Deliverable](#final-deliverable)
@@ -541,6 +543,8 @@ To ensure its functionality within WebViewer, the default template was added to 
 
 <p align="center"><i>Chart.Js Getting Started Bar Graph Code (Chart.Js, 2023)</i></p>
 
+This can be found [here](https://github.com/Joshua-Yuill/Votley_Final-Year-Project/blob/327db0f6b5a3b515291bd263bff99328f3cb7ef6/Testing/Chart.html#L1)
+
 A comparison of the default template in a browser and in WebViewer can be seen below.
 
 >Chart.Js Example Code In Browser            |  Chart.Js Example Code In WebViewer
@@ -614,6 +618,81 @@ gantt
 ```
 
 ### Successes
+
+#### Designing the voting interface
+
+In order to design the voting interface, consideration had to be taken into account for the target audience. To ensure the solution remains accessible and the design language the same, the font used within the PowerPoint client was used within the voting interface. This font is Helvetica, a sans-serif font that is easy to read for people with low vision (Buultjens, 1999). This satisfies user requirement 6.
+In order to ensure consistency between the PowerPoint client and the voting interface, the same color pallet was used. This makes it easy to identify what answer corresponds to what color.
+The design is simple and displays the question being asked at the top of the screen, with the options to chose from bellow. This makes it easy for the user to understand what they are voting for and what options they have to chose from.
+>Voting Options Screen           |  Vote Selected Screen
+> :-------------------------:|:-------------------------:
+> <img src="./Mockup-Images/Voting%20Clients%20Options.png" data-canonical-src="Vote Options Screen" width="400" /> | <img src="./Mockup-Images/Voting%20Client%20Selected.png" data-canonical-src="Selected Vote Screen" width="400" />
+
+When an option is selected the user is presented with a screen that confirms their vote. This allows the user to see what option they picked and can corroborate the color with the graph displayed in the presentation.
+
+#### Creating the voting interface page
+
+In order to easily submit votes to the server during demonstration to the client, a voting interface page was created. This page would allow the user to submit votes to the server just by pushing a button on a HTML page. This interface can be seen below.
+
+The code for this interface can be seen below.
+
+```html
+<!DOCTYPE html>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<head>
+
+<title>Voting Client</title>
+
+</head>
+<body>
+<div id="app">
+<p><b>Did William the Conqueror Win the Battle of hastings in 1066?</b></p>  
+<button data-action="vote1" @click="vote1()">He won the war</button>
+<button data-action="vote2" @click="vote2()">He lost the war</button>
+<button data-action="vote3" @click="vote3()">He died on the battlefield</button>
+{{ message }}
+</div>
+
+</body>
+<script>
+    const { createApp } = Vue  
+
+    const RootComponent = {
+
+        methods: {
+            vote1(){ // Post item
+                fetch(`http://88.111.67.58/response`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: '{"qResponse": 0}',
+            })},
+
+            vote2(){ // Post item
+                fetch(`http://88.111.67.58/response`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: '{"qResponse": 1}',
+            })},
+
+            vote3(){ // Post item
+                fetch(`http://88.111.67.58/response`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: '{"qResponse": 2}',
+            })}
+        }
+    }
+
+    const app = Vue.createApp(RootComponent)
+	const vm = app.mount('#app')
+
+</script>
+```
+
+>![Vote Client](Final-Images/Vote%20Client%20Unthemed.png)
+
+In order to give a better representation of the final product, the voting interface page was designed to look like more similar to the mockup design.
+
 
 ### Challenges
 
