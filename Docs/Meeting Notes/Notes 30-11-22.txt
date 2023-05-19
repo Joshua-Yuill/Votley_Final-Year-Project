@@ -1,0 +1,43 @@
+Clear with the objective of the meeting
+
+- ask him/ to see what data he has on the class. how he is collecting the data. does he do it after the lesson or in the lesson. need the answer to all of that, what is dale capturing
+- students will get info from a varity of sources, audiatory, shared area, projecter. look at the mechanisims the students are using to recive information. Look at the infomation around the room, what information/ singage aavalible to them
+
+- pitch the project ideas
+
+- students username is enviroment variable, active desktop, linked with data on the class or objectives, students being aware of thier progress and knowing how to improve
+
+You can access the contents of a google sheet, via javascript and get json data from it
+
+- can be used for rapid prototyping, allow me to rapidly prototype ideas with dale
+
+-start by asking a question, do you give verbal personlised feedback in a lesson, would you be intrested in a way of caputing that verbal feedback
+
+speculate with dale, what could we use this for, maybe make it could we give students acess to that verbal feedback
+
+Stop teachers just talking all the time, can we create tools, to convey instructions to students about tasks, like duration, 
+
+have you heard of talk less teaching. its a paturn for helping teachers reduce thier verbal presense, but still have an impactful learning enviroment, if your talking less they are working more. Trying to reduce the ongoing verbal presence
+
+write down a quote if its happening during the observation, reminding of the time
+
+do you find yourself using filler words a lot, make not of fillerwords during observation
+
+looking for fillerwords, looking for callouts of time
+
+do you think you talking less woud help your students, why? why not?
+
+if you had acess to the number of minutes spoken that lesson would that be a useful statisict for you
+
+do you have individual data you want to give to the students in a indivudalised way
+
+what i am gonna try to do and solve, think about it, let me know the oder of which you like best
+
+need to get a postor ready.
+
+what he wants created
+
+Idea to see if combining the feedback and the sheets response
+browser by defualt does not have access to system enviroment variables
+
+see what he thinks 

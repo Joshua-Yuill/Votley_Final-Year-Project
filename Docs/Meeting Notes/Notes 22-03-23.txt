@@ -1,0 +1,14 @@
+Get features required for mvp with dale, cut it down to make sure it is viable.
+
+Poc - proof of concept. Features to date. Discuss with dale mvp
+
+user stories, list of features assigned to poc and mvp milestone.
+
+Feautures must be user visable things. things the user will interact with. If we put it in class minimum for this to work. no method. get second date 5th may
+
+contact gordan now, ill recently, and knows other factors, can I usbmit for a 2 week extension, project supervisior is suportive of the extension. ASAP
+
+MVP plenty to write about if I can see it in a class
+
+Create a document, headings. Create table of contents.
+

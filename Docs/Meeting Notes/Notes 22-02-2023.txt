@@ -1,0 +1,9 @@
+Notes:
+
+Create email with dale, book 2 meetings. Say I will send him an email with a powerpoint to check plugin functionality
+
+Look into qr code genrator API's and chart.js is a good choice
+
+Try and get a basic prototpe working even if it is a hardcoded question into it.
+
+Shown Allan my prototype desgin

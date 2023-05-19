@@ -1,0 +1,20 @@
+- Gonna give lots of poster presentation
+- Poster will include, what, why, how and roadmap for project, Investigation research stuff, refrence to something, like design paterns
+- Think pair share. Some kind of vidual with countdown timer to reinforce task
+Rasperby pi swith microphone, ai tells you how long you have been talking for and see timer go up
+Make a fillerword counter with some sort of audio/visual feedback
+feedback transcript per sudent to text
+
+Write email to stem abasador
+Draft up email to dale also, tell him I am working on dbs and if that will be a blocker. Make sure allan is cc'd on the email.
+
+investigate, if given a computer an audio file, how do you do processing via an ai with it. Like how do you get it to understand bannana
+teachable machine, look at what ai libries, what tools are out there. see what can be done.
+
+creates some notes for the postor in the git hub, draft document, with stubs for the 4 discused areas
+
+aim to be with user before next meeting
+
+allan refine mark scheeme and will review draft
+
+Thrilled to be put in touch, looking forward to make real software with a real purpose

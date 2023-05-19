@@ -1,0 +1,21 @@
+Find out the engine, find out how to visualise debug flow
+
+Even if debug by printing add to text area
+
+The fact that I hit a roadblock with chart.js
+
+ticketrs 
+
+demo to dale, milestone 1, speak with dale and agree on what is going to be done next. Two buckets, what next time and what at the end of the whole thing
+
+create a rank ordered list of to do's
+
+should all tickets and delverables should be visible to user. Have technical tasks, such as refactor or change. User focused
+
+Formalising jobs.
+
+Rationalising why unable to deliver gets marks, list things what needs to be done.
+
+Teams meeting. ask if he wants over teams. list of features. lockdown time to demo. Lockdown dates for next milestone and final
+
+List what I have done, add notes for reflection, unaware on browser diffrences.
