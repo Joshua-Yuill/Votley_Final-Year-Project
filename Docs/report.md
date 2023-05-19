@@ -62,13 +62,13 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Short Term Learnings](#short-term-learnings-1)
       - [Long Term Learnings](#long-term-learnings-1)
   - [Phase 3 Development](#phase-3-development)
-    - [Goals for phase 2](#goals-for-phase-2-1)
+    - [Goals for phase 3](#goals-for-phase-3)
     - [Challenges](#challenges-2)
       - [Contacting my client for feedback](#contacting-my-client-for-feedback)
     - [Successes](#successes-2)
       - [Designing the voting interface](#designing-the-voting-interface)
       - [Creating the voting interface page](#creating-the-voting-interface-page)
-    - [Phase 2 Evaluation](#phase-2-evaluation-1)
+    - [Phase 3 Evaluation](#phase-3-evaluation)
       - [Short Term Learnings](#short-term-learnings-2)
       - [Long Term Learnings](#long-term-learnings-2)
   - [Future Phase Of Development](#future-phase-of-development)
@@ -80,8 +80,8 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
     - [Evaluation](#evaluation)
   - [References](#references)
   - [Appendices](#appendices)
+    - [Appendix A: Code for PowerPoint Client](#appendix-a-code-for-powerpoint-client)
     - [Links to Repositories](#links-to-repositories)
-
 
 ## Introduction
 
@@ -115,27 +115,21 @@ The solution must have:
 - Be accessible within existing workflows, in this case PowerPoint.
 - Live update the results of the poll when a vote is received.
 - The votes should be shown in a graphical format.
-- The vote should be easily accessible to students.
+- The vote should be easily accessible to students. Through a web browser no need to install any additional software.
   
 The solution should have:
 
-- The ability to export vote data to excel. // The data is portable, accessible
+- The ability to export data from the poll to an accessible format.
 
 The solution could have:
 
-- 
+- Tell me what option I selected on my device.
+- The ability to have a leaderboard of the top 5 students who have answered the most questions.
 
 The solution won't have:
 
 - A login system
 - Any form of authentication
-
-// Integration with existing workflow
-// Classroom context, No logins needed
-// What are you using
-// Avoid Lengthy login processes
-
-Reference educational theory about involving them
 
 ### Outside of the scope of the project
 
@@ -155,7 +149,6 @@ The main concept behind 'Talk Less Teaching' is to increase the amount of time s
 #### Technology and the Modern Classroom
 
 Technology is an essential tool for teaching and learning in the 21st century (Muir-Herzig, 2004) it has revolutionized education and has allowed for new ways of teaching and learning (Raja, 2018). Technology not only helps to convey the material in a more attractive manner to students but also increases levels of engagement within the lesson (Ratheeswari, 2018). Computers in the classroom enables a level of individualized interactivity that has never yet been seen before. Compared to previous methods of teaching, the blackboard and even to televisions, they were all one way methods of presentation (Osín, 1998) . The computer on the other hand is a bi-directional method of learning as they can not only give information to the user but receive it also. This allows for a learning experience where the student is able to work at their own pace.
-
 
 ### Existing Similar Solutions
 
@@ -761,8 +754,6 @@ Show Screenshots, Show experiments, show test data show the design
 
 #### Receiving Websockets
 
-Development log. You actually built something. Next phase, next date. these things were not identifed so had to cover this thing. have dates and milestones. Have it as developemnt log. by date
-
 Resuming research into Websockets, I found there are two types of Websockets, secure and insecure. Secure Websockets use the `wss://` protocol and insecure Websockets use the `ws://` protocol. The Web Viewer add in for PowerPoint only supports secure Websockets, this is due to the fact that Web Viewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. The adapted code for the Websocket connection can be seen below.
 
 RestAPI Server Side:
@@ -811,10 +802,9 @@ Testing this within Web Viewer, the JSON data was displayed on the page, signify
 #### Design
 To start  a design was mocked up that would hopefully represent what the final implementation will look similar too. This was mocked up inside a PowerPoint window to be able to really judge how the final design would look. This mockup can be seen below.
 
->![Powerpoint client design mockup](/Docs/Mockup-Images/PowerPoint_Mockup.png)
+>![Powerpoint client design mockup](./Mockup-Images/PowerPoint_Mockup.png)
 >
 ><p align="center"><i>Figure 1: PowerPoint client design mockup</i></p>
-
 
 In this design I have made some assumptions based on the target audience, including:
 
@@ -835,11 +825,223 @@ Now that charts were displaying within Web Viewer, I had to be able to take in t
 
 Once I had the ability to manipulate the graph with votes it was time for the finishing touches on the powerpoint client. This included using an API that takes in a url and returns a QR code image. and the title being to the right and the voting to the left. This was all done using HTML and CSS. After it was all done I am pretty impressed with the final result especially with how close it resembles the mockup. This can be seen below.
 
->![Powerpoint client design mockup](/Docs/Final-Images/Final_PowerPoint_Client.png)
+>![Powerpoint client design mockup](./Final-Images/Final_PowerPoint_Client.png)
 >
 ><p align="center"><i>PowerPoint client Final Implementation</i></p>
 
-The code for this client can be seen below.
+The code for this client can be seen in [Apendix A](#appendix-a-code-for-powerpoint-client)
+
+### Phase 2 Evaluation
+
+#### Short Term Learnings
+
+While not completing all my goals set out in this phase, I was able to get a working prototype of the voting interface. The interface managed to react to incoming websocket data. This however took far longer than I originally anticipated due to more issues with the Web Viewer Add-In, which again had a knock on affect of the progress of the project. This combined with trying to fix issues that were not addressed within the previous phase put me even further behind schedule.
+
+#### Long Term Learnings
+
+This again highlights my inexperience when it comes to weighting tasks as I thought that it would take far less time than it actually did. This has taught me to be more realistic when it comes to setting goals and to take into account any issues that may arise.
+
+## Phase 3 Development
+
+```mermaid
+gantt
+    title Phase 3 Development
+    dateFormat  YYYY-MM-DD
+    section Phase 3
+    Mockup Voting Interface         :a1, 2023-03-05, 3d
+    Implement a voting interface     :after a1  , 12d
+    Meet with client for feedback     : 1d
+    Make changes based on feedback given      : 20d
+    Implement question setting client : 14d
+```
+
+### Goals for phase 3
+
+- Mockup a design for the voting interface.
+- Create a voting interface to interact with the Rest API.
+- Get a meeting with my client to discuss the design and get feedback.
+- Make feedback changes to the design.
+- Implement a question setting client.
+
+### Challenges
+
+#### Contacting my client for feedback
+
+An unexpected challenge that I faced within this project was being unable to get ahold of my client. Several meetings were booked with them and they were unable to attend. This was a huge setback as I was unable to get feedback on the design of the voting interface. Not only this, but time wasted chasing up emails and trying to get another meeting booked took away from the time I had to work on the project.
+
+### Successes
+
+#### Designing the voting interface
+
+In order to design the voting interface, assumptions had to be made for the target audience. To ensure the solution remains accessible and the design language the same, the font used within the PowerPoint client was used within the voting interface.
+In order to ensure consistency between the PowerPoint client and the voting interface, the same color pallet was used. This makes it easy to identify what answer corresponds to what color.
+The design is simple and displays the question being asked at the top of the screen, with the options to chose from bellow. This makes it easy for the user to understand what they are voting for and what options they have to chose from.
+>Voting Options Screen           |  Vote Selected Screen
+> :-------------------------:|:-------------------------:
+> <img src="./Mockup-Images/Voting%20Clients%20Options.png" data-canonical-src="Vote Options Screen" width="400" /> | <img src="./Mockup-Images/Voting%20Client%20Selected.png" data-canonical-src="Selected Vote Screen" width="400" />
+
+When an option is selected the user is presented with a screen that confirms their vote. This allows the user to see what option they picked and can corroborate the color with the graph displayed in the presentation.
+
+#### Creating the voting interface page
+
+In order to easily submit votes to the server during demonstration to the client, a voting interface page was created. This page would allow the user to submit votes to the server just by pushing a button on a HTML page. This interface can be seen below.
+
+The code for this interface can be seen below.
+
+```html
+<!DOCTYPE html>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<head>
+
+<title>Voting Client</title>
+
+</head>
+<body>
+<div id="app">
+<p><b>Did William the Conqueror Win the Battle of hastings in 1066?</b></p>  
+<button data-action="vote1" @click="vote1()">He won the war</button>
+<button data-action="vote2" @click="vote2()">He lost the war</button>
+<button data-action="vote3" @click="vote3()">He died on the battlefield</button>
+{{ message }}
+</div>
+
+</body>
+<script>
+    const { createApp } = Vue  
+
+    const RootComponent = {
+
+        methods: {
+            vote1(){ // Post item
+                fetch(`http://88.111.67.58/response`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: '{"qResponse": 0}',
+            })},
+
+            vote2(){ // Post item
+                fetch(`http://88.111.67.58/response`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: '{"qResponse": 1}',
+            })},
+
+            vote3(){ // Post item
+                fetch(`http://88.111.67.58/response`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: '{"qResponse": 2}',
+            })}
+        }
+    }
+
+    const app = Vue.createApp(RootComponent)
+	const vm = app.mount('#app')
+
+</script>
+```
+
+This is what that page looked like. While it is incredibly basic in nature, its purpose was to demonstrate the functionality of the voting interface to the client.
+
+>![Vote Client](Final-Images/Vote%20Client%20Unthemed.png)
+
+### Phase 3 Evaluation
+
+#### Short Term Learnings
+
+Again I was unable to complete the majority of the goals set out in this phase. This was due to the fact that I was unable to get a meeting with my client to discuss the design of the voting interface. I was too focused on trying to get feedback on my project, rather than making improvements in other ares of the project. This and my time management skills as I felt like I devoted too much time to my other assignments rather than focusing on this phase.
+
+#### Long Term Learnings
+
+My long term learnings from this final phase of development is that I need to not only be more realistic when setting goals, but have a better understanding of what I need to do to achieve those goals. As hard as I tried to be proactive at getting feedback I believe that I was too rigid with my structure, such that I felt like I couldn't continue without getting feedback from my client. A better use of my time would have been making improvements to other areas of the project.
+
+## Future Phase Of Development
+
+If I was to have another phase of development I would be mainly focused on user feedback and improvements that can be made. This would include:
+
+- Trialing the software in a classroom environment of older students (Sixth Form), and getting feedback from them.
+- Getting the clients feedback on the product and does it work for them? If not what could be tweaked to make it work for them?
+- Getting the question setting client working, so that the teacher can set their own questions.
+
+Once enough feedback has been gathered and the client is happy we can move from development of a prototype to a MVP (Minimum Viable Product).
+
+## Conclusion
+
+### Technical Evaluation
+
+This project broaden my knowledge of the following technologies:
+
+- Websockets. I had never used websockets before, and I found them to be a very interesting technology. I can see how they would be useful in a lot of different applications, especially in real time applications like online messaging apps or online games.
+- Vue.js. After using Vue.js previously in the project, I found it to be a very useful framework. It has once again proved itself in this project, making it simple to communicate with a Rest API.
+- Chart.js. Chart.js was new to me, starting this project, but now that I have used it, I have found it to be an incredibly useful and versatile library. It is very easy to use and has a lot of different options for customization.
+
+### Final Deliverable
+
+I present to you, Votley. The integrated voting system for powerpoint.
+
+>![Votley](./Final-Images/Final%20app%20Running.png)
+>
+><p align="center"><i>PowerPoint client Final Implementation</i></p>
+
+A video of the live updating within powerpoint can be seen [here](https://youtu.be/v-abFtQlbxM)
+
+The votes can be added from the voting interface page, which can be seen below.
+
+>![Vote Client](Final-Images/Vote%20Client%20Unthemed.png)
+
+### Business case
+
+From a business perspective an application like this would be useful to teachers, due to its ease of implementation into their existing workflows. This application would need a lot of further development before it could be used in a real world setting, but the core functionality is there. Monetization could then be implemented as such to incur revenue for the company and continue future development.
+
+If this application was to be used in a real world setting, it would need to be more robust and have more features. This would include:
+
+- cookie based system, that would limit the voter to 1 vote per question.
+
+### Future Work
+
+Features I would have liked to implement with more time.
+
+- web cookie based system, that would limit the voter to 1 vote per question.
+- Teacher client, that would allow the teacher to set the questions before the class.
+- Exporting of the data to a CSV file.
+- A more robust system for handling errors.
+- The ability to add multiple questions to a presentation.
+- A clear button to clear all votes from the server.
+
+### Evaluation
+
+I think even though this project didn't reach all of its goals, I still believe it was a huge success in terms of my own personal development. This project challenged me in ways I thought were not possible. Throughout this project I have learnt many new skills, including helping me to better understand sizing tasks and dealing with having a client. I have learned not to underestimate tasks that at first glance seem simple, as they can often be more complex. I have also learned to better manage my time, as I feel I could have done a lot more if I had better time management and a rigid schedule. But ultimately this project taught me resilience as after every set back, and every downfall I got back up and I kept trying till I figured it out.
+
+In terms of the project hitting its objectives, in this regard it failed. While the project hit a some aims and objectives, including the integration into existing workflows, I feel like it did not cover them all. I feel my lack of understanding of technologies such as the Web Viewer Add-In and websockets contributed greatly to a huge amount of delay in the project, due to me having to not only learn how they operate, but debug all of the unknown errors that came with them. Not only this but issues communicating with the client also caused delays within the project. In terms of a proof of concept though, I feel it successfully shows that the idea has merit and could be developed further in the future.
+
+I think the biggest holdback of this project was the sheer amount of holdups from Web Viewer Add-In and using it with other technologies. Due to the nature of this add on, there isn't much information available on it, so I spent most of my time trying to debug issues.  
+
+If I were to repeat this project I would have a much more rigid schedule, and give more dedicated time to tasks that I have not had any experience with before. I feel like client communication could be improved also as in this case I was unable to get any client feedback for my solution which I felt really hindered my progress. So in the future I would try to get more client feedback more regularly, for example at the end of every sprint. This could be formal or informal feedback.
+
+## References
+
+- Buultjens, M., Aitken, S., Ravenscroft, J. and Carey, K., 1999. Size counts: The significance of size, font and style of print for readers with low vision sitting examinations. British Journal of Visual Impairment, 17(1), pp.5-10.
+- Chart.Js, 2023. Step-By-Step guide. [Online] Available at: https://www.chartjs.org/docs/latest/getting-started/usage.html [Accessed 18 05 2023].
+- Consumer Insights, 2015. Attention spans, s.l.: Microsoft Canada, Spring.
+- Iona, J., 2018. Mentimeter. School Librarian, 66(3), pp.153-154.
+- Kahoot, 2020. What is Kahoot. [Online] Available at: https://kahoot.com/what-is-kahoot/ [Accessed 17 05 2023].
+- McCormick, M., 2012. Waterfall vs. Agile methodology. MPCS, N/A, 3.
+- McGrath, S., 2019. Talk Less So Students Learn More. Edutopia. Recuperado em, 16.
+- Mentimeter.com, n.d. Audience Engagement Platform. [Online] Available at: https://www.mentimeter.com/features [Accessed 18 May 23].
+- Microsoft Corporation, 2023. Web Viewer. [Online] Available at: <https://appsource.microsoft.com/en-us/product/office/WA104295828?tab=Reviews&exp=ubp8#> (Accessed on 2023-04-25)
+- Muir-Herzig, R. G., 2004. Technology and its impact in the classroom. Computers \& Education, 42(2), pp. 111--131.
+- Napoles, J., 2007. The effect of duration of teacher talk on the attitude, attentiveness, and performance achievement of high school choral students. Research Perspectives in Music Education, 11(1), pp.22-29.
+- Osín, L., 1998. Computers in education in developing countries: Why and how?. Education and Technology Team, Human Development Network, World Bank.
+- Poll Everywhere, n.d. Everything you need to know about Poll Everywhere terminology. [Online] 
+Available at: https://blog.polleverywhere.com/poll-everywhere-terminology/ :~:text=Poll%20Everywhere%20is%20a%20real,the%20web%20at%20polleverywhere.com. [Accessed 18 05 2023].
+- Raja, R. and Nagasubramani, P.C., 2018. Impact of modern technology in education. Journal of Applied and Advanced Research, 3(1), pp.33-35.
+- Ratheeswari, K., 2018. Information communication technology in education. Journal of Applied and Advanced research, 3(1), pp.45-47.
+- Wallace, I., 2014. Talk-less teaching: practice, participation and progress. Crown House Publishing.
+- Wang, A.I. and Tahir, R., 2020. The effect of using Kahoot! for learning–A literature review. Computers & Education, 149, p.103818. 
+
+## Appendices
+
+### Appendix A: Code for PowerPoint Client
 
 ```html
 <!DOCTYPE html>
@@ -891,7 +1093,7 @@ body
 <div class="row">
 <div class="column">
     <p><b>Did William the Conqueror Win the Battle of hastings in 1066?</b></p>
-    <br>
+    <br> <!--https://goqr.me/api/doc/create-qr-code/-->
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jy87.webhosting.canterbury.ac.uk/client.html">
     <div class="now">Cast your vote now!</div>
 </div>
@@ -1000,221 +1202,13 @@ body
   }
  
 </script>
-<!--Chart.js for visulaisations in powerpoint-->
+<!--Chart.js for visualizations in powerpoint-->
  
 </html>
 ```
 
-### Phase 2 Evaluation
-
-#### Short Term Learnings
-
-While not completing all my goals set out in this phase, I was able to get a working prototype of the voting interface. The interface managed to react to incoming websocket data. This however took far longer than I originally anticipated due to more issues with the Web Viewer Add-In, which again had a knock on affect of the progress of the project. This combined with trying to fix issues that were not addressed within the previous phase put me even further behind schedule.
-
-#### Long Term Learnings
-
-This again highlights my inexperience when it comes to weighting tasks as I thought that it would take far less time than it actually did. This has taught me to be more realistic when it comes to setting goals and to take into account any issues that may arise.
-
-## Phase 3 Development
-
-```mermaid
-gantt
-    title Phase 3 Development
-    dateFormat  YYYY-MM-DD
-    section Phase 3
-    Mockup Voting Interface         :a1, 2023-03-05, 3d
-    Implement a voting interface     :after a1  , 12d
-    Meet with client for feedback     : 1d
-    Make changes based on feedback given      : 20d
-    Implement question setting client : 14d
-```
-
-### Goals for phase 2
-
-- Mockup a design for the voting interface.
-- Create a voting interface to interact with the Rest API.
-- Get a meeting with my client to discuss the design and get feedback.
-- Make feedback changes to the design.
-- Implement a question setting client.
-
-### Challenges
-
-#### Contacting my client for feedback
-
-An unexpected challenge that I faced within this project was being unable to get ahold of my client. Several meetings were booked with them and they were unable to attend. This was a huge setback as I was unable to get feedback on the design of the voting interface. Not only this, but time wasted chasing up emails and trying to get another meeting booked took away from the time I had to work on the project.
-
-### Successes
-
-#### Designing the voting interface
-
-In order to design the voting interface, assumptions had to be made for the target audience. To ensure the solution remains accessible and the design language the same, the font used within the PowerPoint client was used within the voting interface.
-In order to ensure consistency between the PowerPoint client and the voting interface, the same color pallet was used. This makes it easy to identify what answer corresponds to what color.
-The design is simple and displays the question being asked at the top of the screen, with the options to chose from bellow. This makes it easy for the user to understand what they are voting for and what options they have to chose from.
->Voting Options Screen           |  Vote Selected Screen
-> :-------------------------:|:-------------------------:
-> <img src="./Mockup-Images/Voting%20Clients%20Options.png" data-canonical-src="Vote Options Screen" width="400" /> | <img src="./Mockup-Images/Voting%20Client%20Selected.png" data-canonical-src="Selected Vote Screen" width="400" />
-
-When an option is selected the user is presented with a screen that confirms their vote. This allows the user to see what option they picked and can corroborate the color with the graph displayed in the presentation.
-
-#### Creating the voting interface page
-
-In order to easily submit votes to the server during demonstration to the client, a voting interface page was created. This page would allow the user to submit votes to the server just by pushing a button on a HTML page. This interface can be seen below.
-
-The code for this interface can be seen below.
-
-```html
-<!DOCTYPE html>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<head>
-
-<title>Voting Client</title>
-
-</head>
-<body>
-<div id="app">
-<p><b>Did William the Conqueror Win the Battle of hastings in 1066?</b></p>  
-<button data-action="vote1" @click="vote1()">He won the war</button>
-<button data-action="vote2" @click="vote2()">He lost the war</button>
-<button data-action="vote3" @click="vote3()">He died on the battlefield</button>
-{{ message }}
-</div>
-
-</body>
-<script>
-    const { createApp } = Vue  
-
-    const RootComponent = {
-
-        methods: {
-            vote1(){ // Post item
-                fetch(`http://88.111.67.58/response`, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: '{"qResponse": 0}',
-            })},
-
-            vote2(){ // Post item
-                fetch(`http://88.111.67.58/response`, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: '{"qResponse": 1}',
-            })},
-
-            vote3(){ // Post item
-                fetch(`http://88.111.67.58/response`, {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: '{"qResponse": 2}',
-            })}
-        }
-    }
-
-    const app = Vue.createApp(RootComponent)
-	const vm = app.mount('#app')
-
-</script>
-```
-
-This is what that page looked like. While it is incredibly basic in nature, its purpose was to demonstrate the functionality of the voting interface to the client.
-
->![Vote Client](Final-Images/Vote%20Client%20Unthemed.png)
-
-### Phase 2 Evaluation
-
-#### Short Term Learnings
-
-Again I was unable to complete the majority of the goals set out in this phase. This was due to the fact that I was unable to get a meeting with my client to discuss the design of the voting interface. I was too focused on trying to get feedback on my project, rather than making improvements in other ares of the project. This and my time management skills as I felt like I devoted too much time to my other assignments rather than focusing on this phase.
-
-#### Long Term Learnings
-
-My long term learnings from this final phase of development is that I need to not only be more realistic when setting goals, but have a better understanding of what I need to do to achieve those goals. As hard as I tried to be proactive at getting feedback I believe that I was too rigid with my structure, such that I felt like I couldn't continue without getting feedback from my client. A better use of my time would have been making improvements to other areas of the project.
-
-## Future Phase Of Development
-
-If I was to have another phase of development I would be mainly focused on user feedback and improvements that can be made. This would include:
-
-- Trialing the software in a classroom environment of older students (Sixth Form), and getting feedback from them.
-- Getting the clients feedback on the product and does it work for them? If not what could be tweaked to make it work for them?
-- Getting the question setting client working, so that the teacher can set their own questions.
-
-Once enough feedback has been gathered and the client is happy we can move from development of a prototype to a MVP (Minimum Viable Product).
-
-## Conclusion
-
-### Technical Evaluation
-
-This project broaden my knowledge of the following technologies:
-
-- Websockets. I had never used websockets before, and I found them to be a very interesting technology. I can see how they would be useful in a lot of different applications, especially in real time applications like online messaging apps or online games.
-- Vue.js. After using Vue.js previously in the project, I found it to be a very useful framework. It has once again proved itself in this project, making it simple to communicate with a Rest API.
-- Chart.js. Chart.js was new to me, starting this project, but now that I have used it, I have found it to be an incredibly useful and versatile library. It is very easy to use and has a lot of different options for customization.
-
-### Final Deliverable
-
-I present to you, Votley. The integrated voting system for powerpoint.
-
->![Votley](./Final-Images/Final%20app%20Running.png)
->
-><p align="center"><i>PowerPoint client Final Implementation</i></p>
-
-A video of the live updating within powerpoint can be seen [here](https://youtu.be/v-abFtQlbxM)
-
-The votes can be added from the voting interface page, which can be seen below.
-
->![Vote Client](Final-Images/Vote%20Client%20Unthemed.png)
-
-### Business case
-
-From a business perspective an application like this would be useful to teachers, due to its ease of implementation into their existing workflows. This application would need a lot of further development before it could be used in a real world setting, but the core functionality is there. Monetization could then be implemented as such to incur revenue for the company and continue future development.
-
-If this application was to be used in a real world setting, it would need to be more robust and have more features. This would include:
-
-- cookie based system, that would limit the voter to 1 vote per question.
-
-### Future Work
-
-Features I would have liked to implement with more time.
-
-- web cookie based system, that would limit the voter to 1 vote per question.
-- Teacher client, that would allow the teacher to set the questions before the class.
-- Exporting of the data to a CSV file.
-- A more robust system for handling errors.
-- The ability to add multiple questions to a presentation.
-- A clear button to clear all votes from the server.
-
-### Evaluation
-
-I think even though this project didn't reach all of its goals, I still believe it was a huge success in terms of my own personal development. This project challenged me in ways I thought were not possible. Throughout this project I have learnt many new skills, including helping me to better understand sizing tasks and dealing with having a client. I have learned not to underestimate tasks that at first glance seem simple, as they can often be more complex. I have also learned to better manage my time, as I feel I could have done a lot more if I had better time management and a rigid schedule. But ultimately this project taught me resilience as after every set back, and every downfall I got back up and I kept trying till I figured it out.
-
-In terms of the project hitting its objectives, in this regard it failed. While the project hit a some aims and objectives, including the integration into existing workflows, I feel like it did not cover them all. I feel my lack of understanding of technologies such as the Web Viewer Add-In and websockets contributed greatly to a huge amount of delay in the project, due to me having to not only learn how they operate, but debug all of the unknown errors that came with them. Not only this but issues communicating with the client also caused delays within the project. In terms of a proof of concept though, I feel it successfully shows that the idea has merit and could be developed further in the future.
-
-I think the biggest holdback of this project was the sheer amount of holdups from Web Viewer Add-In and using it with other technologies. Due to the nature of this add on, there isn't much information available on it, so I spent most of my time trying to debug issues.  
-
-If I were to repeat this project I would have a much more rigid schedule, and give more dedicated time to tasks that I have not had any experience with before. I feel like client communication could be improved also as in this case I was unable to get any client feedback for my solution which I felt really hindered my progress. So in the future I would try to get more client feedback more regularly, for example at the end of every sprint. This could be formal or informal feedback.
-
-## References
-
-- Buultjens, M., Aitken, S., Ravenscroft, J. and Carey, K., 1999. Size counts: The significance of size, font and style of print for readers with low vision sitting examinations. British Journal of Visual Impairment, 17(1), pp.5-10.
-- Chart.Js, 2023. Step-By-Step guide. [Online] Available at: https://www.chartjs.org/docs/latest/getting-started/usage.html [Accessed 18 05 2023].
-- Consumer Insights, 2015. Attention spans, s.l.: Microsoft Canada, Spring.
-- Iona, J., 2018. Mentimeter. School Librarian, 66(3), pp.153-154.
-- Kahoot, 2020. What is Kahoot. [Online] Available at: https://kahoot.com/what-is-kahoot/ [Accessed 17 05 2023].
-- McCormick, M., 2012. Waterfall vs. Agile methodology. MPCS, N/A, 3.
-- McGrath, S., 2019. Talk Less So Students Learn More. Edutopia. Recuperado em, 16.
-- Mentimeter.com, n.d. Audience Engagement Platform. [Online] Available at: https://www.mentimeter.com/features [Accessed 18 May 23].
-- Microsoft Corporation, 2023. Web Viewer. [Online] Available at: <https://appsource.microsoft.com/en-us/product/office/WA104295828?tab=Reviews&exp=ubp8#> (Accessed on 2023-04-25)
-- Muir-Herzig, R. G., 2004. Technology and its impact in the classroom. Computers \& Education, 42(2), pp. 111--131.
-- Napoles, J., 2007. The effect of duration of teacher talk on the attitude, attentiveness, and performance achievement of high school choral students. Research Perspectives in Music Education, 11(1), pp.22-29.
-- Osín, L., 1998. Computers in education in developing countries: Why and how?. Education and Technology Team, Human Development Network, World Bank.
-- Poll Everywhere, n.d. Everything you need to know about Poll Everywhere terminology. [Online] 
-Available at: https://blog.polleverywhere.com/poll-everywhere-terminology/ :~:text=Poll%20Everywhere%20is%20a%20real,the%20web%20at%20polleverywhere.com. [Accessed 18 05 2023].
-- Raja, R. and Nagasubramani, P.C., 2018. Impact of modern technology in education. Journal of Applied and Advanced Research, 3(1), pp.33-35.
-- Ratheeswari, K., 2018. Information communication technology in education. Journal of Applied and Advanced research, 3(1), pp.45-47.
-- Wallace, I., 2014. Talk-less teaching: practice, participation and progress. Crown House Publishing.
-- Wang, A.I. and Tahir, R., 2020. The effect of using Kahoot! for learning–A literature review. Computers & Education, 149, p.103818. 
-
-## Appendices
-
 ### Links to Repositories
 
 - [GitHub Repository](https://github.com/Joshua-Yuill/Votley_Final-Year-Project)
+
+
