@@ -178,13 +178,6 @@ Limitations:
 
 Mentimeter can be found [here](https://www.mentimeter.com/)
 
-
-Break down what it is these solutions are doing.
-
-//You focused on these features, becuase.
-
-//What is the problem how will it nbe used
-
 #### Poll Everywhere
 
 Like Mentimeter, Poll Everywhere is a web-based real-time audience response system. Unlike Mentimeter, Poll Everywhere integrates with google slides and Microsoft PowerPoint (Poll Everywhere, n.d.). It is able to create word clouds, polls, quizzes and more. It is a paid service, with a free tier that has limitations on its usage. Poll Everywhere allows for the collection and tracking to responses to questions and polls. Poll everywhere also has the unique feature of allowing users to text in their responses to questions, which is a feature unavailable on the other 2 solutions.
@@ -215,6 +208,8 @@ Limitations:
 - Has a very limited free tier in terms of the number of participants and questions that can be asked.
 - Doesn't have a leaderboard feature.
 - Quite Bland design.
+
+Poll Everywhere can be found [here](https://www.polleverywhere.com/)
 
 #### Kahoot
 
@@ -249,6 +244,8 @@ Limitations:
 - It doesn't seamlessly integrate into existing workflows, you have to switch to a web browser.
 - The question is not shown on the device of the user, they have to look up at the screen to see the question.
 - Doesn't seem very suited to a more mature audience. This has all the features that would make it ideal for a younger audience, bright colors, playful music, and a game-like interface.
+
+Kahoot can be found [here](https://kahoot.com/)
 
 ### Users
 
