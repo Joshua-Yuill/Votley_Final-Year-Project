@@ -1,5 +1,9 @@
 # Individual Project – Integrated Voting Within PowerPoint
 
+## Abstract
+
+This project is a proof of concept to show that it is possible to integrate a voting system within PowerPoint presentation. The aim is to increase student participation within the classroom, without disrupting the flow of the lesson. The solution is designed to be easily integrated within the teachers existing workflow, and be accessible for both the teacher and the students. The solution will be completed using a variety of technologies, including websockets, a REST API, and a web application.  
+
 ## Acknowledgements
 
 I would like to thank my amazing project supervisor Allan Callaghan for all his help and support throughout the project. Thank you also to Sir Rodger Manwood's School for allowing me to work with them on this project.
@@ -7,15 +11,15 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
 ## Table of Contents
 
 - [Individual Project – Integrated Voting Within PowerPoint](#individual-project--integrated-voting-within-powerpoint)
+  - [Abstract](#abstract)
   - [Acknowledgements](#acknowledgements)
   - [Table of Contents](#table-of-contents)
-  - [Abstract](#abstract)
   - [Introduction](#introduction)
   - [Problem Analysis](#problem-analysis)
     - [Aims](#aims)
+    - [Scope of the project](#scope-of-the-project)
     - [Objectives](#objectives)
     - [Outside of the scope of the project](#outside-of-the-scope-of-the-project)
-    - [Scope of the project](#scope-of-the-project)
     - [Literature review](#literature-review)
       - [Talk less Teaching](#talk-less-teaching)
       - [Technology and the Modern Classroom](#technology-and-the-modern-classroom)
@@ -41,16 +45,16 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Viewing a webpage in Web Viewer](#viewing-a-webpage-in-web-viewer)
       - [RestAPI Server](#restapi-server)
       - [Containerizing the RestAPI Server](#containerizing-the-restapi-server)
-      - [Receiving Websockets](#receiving-websockets)
-    - [Milestone Retrospective](#milestone-retrospective)
-      - [Short Term Learnings](#short-term-learnings)
       - [Long Term Learnings](#long-term-learnings)
   - [Phase 2 Development](#phase-2-development)
     - [Goals for phase 2](#goals-for-phase-2)
     - [Challenges](#challenges-1)
+      - [Websockets](#websockets)
       - [Chart.JS Library](#chartjs-library)
     - [Successes](#successes-1)
-      - [Websockets](#websockets)
+      - [Receiving Websockets](#receiving-websockets)
+    - [Milestone Retrospective](#milestone-retrospective)
+      - [Short Term Learnings](#short-term-learnings)
       - [Design](#design)
       - [Chart.JS v2](#chartjs-v2)
       - [Websockets to votes](#websockets-to-votes)
@@ -75,15 +79,10 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
   - [Appendices](#appendices)
     - [Links to Repositories](#links-to-repositories)
 
-## Abstract
-
-// Try to seperate the implimentation details - Sperate the what from the how. In ssoftware enjneering we create solutions for problems. Dale wants to engage the students more, not that he wants it in powerpoint
 
 ## Introduction
 
 This proof of concept project, working in collaboration with Sir Rodger Manwood's School, is designed to engage students with an age range of 12 - 18 more within the classroom. The aim is to design a seamlessly integrated participation tool that can easily fit into a teachers existing workflow to help students to focus more within the classroom. Having to navigate to a separate website or application to participate in a lesson can be disruptive and can slow down the flow of the lesson.
-
-// Use Bullet points to make points, convey why those decides were made. from an engineering perspective.
 
 ## Problem Analysis
 
@@ -101,6 +100,10 @@ The aims of this project are:
 6. Be able to be used by students with no additional training.
 7. Keep students engaged within the classroom.
 8. Get feedback from students of their understanding of the lesson.
+
+### Scope of the project
+
+It is important to define, what is and what is not required for this prototype. This will help to keep the project on track and avoid scope creep. The scope of this project is:
 
 ### Objectives
 
@@ -140,12 +143,6 @@ These are outside of the scope of this project but could be considered in the fu
 - User manual, as the user will be trained in the use of the software.
 - No need to consider monetization, as this is a proof of concept project.
 
-### Scope of the project
-
-This is not only a good solution for just our client, but could be useful for teachers around the country. With PowerPoint being a staple in the modern classroom, this tool would easily integrate within the teachers current workflow and minimal additional knowledge would be required to use it. This is hugely beneficial as with marking and planning teachers have very little time to learn new tools and software.
-
-To enable software to reach as many users as possible this software would be free with available extras at a monthly cost. Examples of some of extras could be, an unlimited amount of questions being created a day, or the ability to customize the color scheme to better suit the presentation. This would generate ongoing revenue for the company and would allow for the software to be maintained and updated.
-
 ### Literature review
 
 #### Talk less Teaching
@@ -160,7 +157,7 @@ Why and how is technology being used in the classroom. What are the benefits of 
 
 ### Existing Similar Solutions
 
-Some commercial solutions are already pre-existing and an analysis of such can be found below. // Make this a naritive. Has somebody solved this problem before? Try to describe what it is that I am doing. Investigating software so that I can get ideas from features available
+While some commercially available solutions do exist, none of them have the proposed feature-set that my solution aims to provide. Most of these solutions shown do not integrate into existing workflows, or when they do they are lacking convenience features like QR code to join.
 
 #### Mentimeter
 
@@ -195,7 +192,7 @@ Break down what it is these solutions are doing.
 
 #### Poll Everywhere
 
-Poll Everywhere is a web-based application 
+Like Mentimeter, Poll Everywhere is a web-based real-time audience response system. Unlike Mentimeter, Poll Everywhere integrates with google slides and Microsoft PowerPoint (Poll Everywhere, n.d.). It is able to create word clouds, polls, quizzes and more. It is a paid service, with a free tier that has limitations on its usage. Poll Everywhere allows for the collection and tracking to responses to questions and polls. Poll everywhere also has the unique feature of allowing users to text in their responses to questions, which is a feature unavailable on the other 2 solutions.
 
 > Screenshots of the application:
 > Poll Everywhere Presentation Display             | Poll Everywhere Voting Display
@@ -281,8 +278,6 @@ Limitations:
 ## Software Design Analysis
 
 ### User Stories
-
-// Size tickets
 
 1. As a Student I want to be able to see the question that I am voting on, on my device in synchronization with the lesson so that I do not have to look up at the screen or select the question allowing me to focus on the question at hand.
 
@@ -595,65 +590,6 @@ run:
 
 The make file can be ran by using the command `make build` to build the container and `make run` to run the container. The container can be accessed on port 80.
 
-#### Receiving Websockets
-
-Development log. You actually built something. Next phase, next date. these things were not identifed so had to cover this thing. have dates and milestones. Have it as developemnt log. by date
-
-Resuming research into Websockets, I found there are two types of Websockets, secure and insecure. Secure Websockets use the `wss://` protocol and insecure Websockets use the `ws://` protocol. The Web Viewer add in for PowerPoint only supports secure Websockets, this is due to the fact that Web Viewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. The adapted code for the Websocket connection can be seen below.
-
-RestAPI Server Side:
-
-```python
-# Websocket Route ----------------------------------------
-@app.websocket("/wss")
-async def websocket_endpoint(websocket: WebSocket):
-    await websocket.accept()
-    try:
-        while True: #ques put and get
-            data = await q.get() # Get the data from the queue
-            await websocket.send_json(data) # Send the data to the client
-            print("websocket", data)
-    except:
-        pass
-```
-
-Websocket Test WSS:
-
-```javascript
-const socket = new WebSocket('wss://connection.kimochi.uk/wss');
- 
-    socket.addEventListener('open', function (event) {
- 
-    socket.send('hello');
- 
-});
-```
-
-In order to get a HTTPS certificate for the server, a domain name was purchased. This domain was then proxied to the server using cloudflare. An A record was created for the subdomain "connection". The record created in cloudflare can be seen below.
-
-> ![Cloudflare A Record](./Refrence%20Images/Cloudflare/DNS%20Record%20Created.png)
->
-> <p align="center"><i>A record created in cloudflare</i></p>
-
-Any requests to the subdomain "connection" would seem to be from a HTTPS source, allowing us to use the `wss://` protocol.
-
-Testing this within Web Viewer, the JSON data was displayed on the page, signifying that the connection was successful.
-
-> ![Websocket Test](./Final-Images/Powerpoint%20Websocket%20Test.png)
->
-> <p align="center"><i>Websocket Data Recived within Web Viewer</i></p>
-
-### Milestone Retrospective
-
-// Did we fufill the goals, yes no, patial. We can record votes using a an api. its viewable live
-
-#### Short Term Learnings
-
-// compare goals in the begining of the phase and to what was actually achieved.
-
-// Re evaluate this
-
-Looking back at the progress made in Phase 1, it was not as substantial as I first thought it was going to be. My inexperience in accurately sizing tasks to be completed led me to be over ambitious with the amount of work I could complete in the time frame. I have learned that I need to more accurately size tasks that I have not done before, and give them a little more time, even if on the surface they seem quite easy. I was able to complete the research into the proposed idea and the research into the technology that would be used. I was also able to complete the development of the RestAPI server that would be used to send the data to the PowerPoint client.
 
 #### Long Term Learnings
 
@@ -688,6 +624,58 @@ gantt
 - Create the voting interface
 
 ### Challenges
+
+#### Websockets
+
+Websocket support was critical to enable the live updating feature on the presentation client. Creating a simple webpage that shows the data received through a websocket connection. After loading the page in Web Viewer, the websocket connection was not established. When tested within a browser the page worked fine. This was a limitation of the Web Viewer add in for PowerPoint.
+
+The below code was used to test the websocket connection.
+
+```html
+<!DOCTYPE html>
+ 
+<html lang="en">
+ 
+<head>
+ 
+    <meta charset="UTF-8">
+ 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>WebSocker Client</title>
+ </head>
+<body>
+    <button onclick="contactServer">Click Here</button>
+</body>
+<script>
+    const socket = new WebSocket('ws://88.111.67.58/ws');
+ 
+    socket.addEventListener('open', function (event) {
+ 
+    socket.send('hello');
+});
+ 
+socket.addEventListener('message', function (event) {
+ 
+    document.write(event.data);
+ 
+});
+ 
+const contactServer = () => {
+ 
+    socket.send("Hello");
+    document.write(event.data);
+ 
+}
+ 
+</script>
+ 
+</html>
+```
+
+When the button displayed on the HTML page is clicked the `contactServer` function is called. This function sends a message to the websocket server and then displays the response on the page. This allows for the testing of the websocket connection without access to the console.
 
 #### Chart.JS Library
 
@@ -763,57 +751,65 @@ Show Screenshots, Show experiments, show test data show the design
 
 ### Successes
 
-#### Websockets
+#### Receiving Websockets
 
-Websocket support was critical to enable the live updating feature on the presentation client. Creating a simple webpage that shows the data received through a websocket connection. After loading the page in Web Viewer, the websocket connection was not established. When tested within a browser the page worked fine. This was a limitation of the Web Viewer add in for PowerPoint.
+Development log. You actually built something. Next phase, next date. these things were not identifed so had to cover this thing. have dates and milestones. Have it as developemnt log. by date
 
-The below code was used to test the websocket connection.
+Resuming research into Websockets, I found there are two types of Websockets, secure and insecure. Secure Websockets use the `wss://` protocol and insecure Websockets use the `ws://` protocol. The Web Viewer add in for PowerPoint only supports secure Websockets, this is due to the fact that Web Viewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. The adapted code for the Websocket connection can be seen below.
 
-```html
-<!DOCTYPE html>
- 
-<html lang="en">
- 
-<head>
- 
-    <meta charset="UTF-8">
- 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
- 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <title>WebSocker Client</title>
- </head>
-<body>
-    <button onclick="contactServer">Click Here</button>
-</body>
-<script>
-    const socket = new WebSocket('ws://88.111.67.58/ws');
+RestAPI Server Side:
+
+```python
+# Websocket Route ----------------------------------------
+@app.websocket("/wss")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    try:
+        while True: #ques put and get
+            data = await q.get() # Get the data from the queue
+            await websocket.send_json(data) # Send the data to the client
+            print("websocket", data)
+    except:
+        pass
+```
+
+Websocket Test WSS:
+
+```javascript
+const socket = new WebSocket('wss://connection.kimochi.uk/wss');
  
     socket.addEventListener('open', function (event) {
  
     socket.send('hello');
-});
- 
-socket.addEventListener('message', function (event) {
- 
-    document.write(event.data);
  
 });
- 
-const contactServer = () => {
- 
-    socket.send("Hello");
-    document.write(event.data);
- 
-}
- 
-</script>
- 
-</html>
 ```
 
-When the button displayed on the HTML page is clicked the `contactServer` function is called. This function sends a message to the websocket server and then displays the response on the page. This allows for the testing of the websocket connection without access to the console.
+In order to get a HTTPS certificate for the server, a domain name was purchased. This domain was then proxied to the server using cloudflare. An A record was created for the subdomain "connection". The record created in cloudflare can be seen below.
+
+> ![Cloudflare A Record](./Refrence%20Images/Cloudflare/DNS%20Record%20Created.png)
+>
+> <p align="center"><i>A record created in cloudflare</i></p>
+
+Any requests to the subdomain "connection" would seem to be from a HTTPS source, allowing us to use the `wss://` protocol.
+
+Testing this within Web Viewer, the JSON data was displayed on the page, signifying that the connection was successful.
+
+> ![Websocket Test](./Final-Images/Powerpoint%20Websocket%20Test.png)
+>
+> <p align="center"><i>Websocket Data Recived within Web Viewer</i></p>
+
+### Milestone Retrospective
+
+// Did we fufill the goals, yes no, patial. We can record votes using a an api. its viewable live
+
+#### Short Term Learnings
+
+// compare goals in the begining of the phase and to what was actually achieved.
+
+// Re evaluate this
+
+Looking back at the progress made in Phase 1, it was not as substantial as I first thought it was going to be. My inexperience in accurately sizing tasks to be completed led me to be over ambitious with the amount of work I could complete in the time frame. I have learned that I need to more accurately size tasks that I have not done before, and give them a little more time, even if on the surface they seem quite easy. I was able to complete the research into the proposed idea and the research into the technology that would be used. I was also able to complete the development of the RestAPI server that would be used to send the data to the PowerPoint client.
 
 #### Design
 To start  a design was mocked up that would hopefully represent what the final implementation will look similar too. This was mocked up inside a PowerPoint window to be able to really judge how the final design would look. This mockup can be seen below.
@@ -868,7 +864,6 @@ body
   width: 50%;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
