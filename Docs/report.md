@@ -45,6 +45,8 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Viewing a webpage in Web Viewer](#viewing-a-webpage-in-web-viewer)
       - [RestAPI Server](#restapi-server)
       - [Containerizing the RestAPI Server](#containerizing-the-restapi-server)
+    - [Milestone Retrospective](#milestone-retrospective)
+      - [Short Term Learnings](#short-term-learnings)
       - [Long Term Learnings](#long-term-learnings)
   - [Phase 2 Development](#phase-2-development)
     - [Goals for phase 2](#goals-for-phase-2)
@@ -53,8 +55,6 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
       - [Chart.JS Library](#chartjs-library)
     - [Successes](#successes-1)
       - [Receiving Websockets](#receiving-websockets)
-    - [Milestone Retrospective](#milestone-retrospective)
-      - [Short Term Learnings](#short-term-learnings)
       - [Design](#design)
       - [Chart.JS v2](#chartjs-v2)
       - [Websockets to votes](#websockets-to-votes)
@@ -68,6 +68,9 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
     - [Successes](#successes-2)
       - [Designing the voting interface](#designing-the-voting-interface)
       - [Creating the voting interface page](#creating-the-voting-interface-page)
+    - [Phase 2 Evaluation](#phase-2-evaluation-1)
+      - [Short Term Learnings](#short-term-learnings-2)
+      - [Long Term Learnings](#long-term-learnings-2)
   - [Future Phase Of Development](#future-phase-of-development)
   - [Conclusion](#conclusion)
     - [Technical Evaluation](#technical-evaluation)
@@ -325,6 +328,7 @@ The software stack that will be used for this project is:
 - Docker will be to containerize the application. This will allow for the application to be easily deployed to a server.
 - chart.js will be used to display the results of the vote to the user in a graph-based representation.
 - vue.js will be used on the voting client to communicate with the RestAPI server.
+- A QR code generator API will be used to generate the QR code for the voting client.
 
 ## Phase 1 Development
 
@@ -589,12 +593,17 @@ run:
 
 The make file can be ran by using the command `make build` to build the container and `make run` to run the container. The container can be accessed on port 80.
 
+### Milestone Retrospective
+
+#### Short Term Learnings
+
+Looking back at the goals that were set at the beginning of the phase, unfortunately they were only partially completed. This is due to the fact that we were originally set back by our client meeting times, and then further set back by the fact that we were unable to get the Web Viewer Add-In working. However, we were able to get the RestAPI server working and it is able to record votes, and we were able to get the websocket connection working, so that the data can be sent to the presentation client. We were also able to get the RestAPI server containerized using Docker, so that it can be easily deployed.
 
 #### Long Term Learnings
 
-// link back to aims and objectives, double check markscheme
+Reflecting on what I have learned in this phase, a key point for me would be to not underestimate task sizes. Not only this, but I have also learned that what might not work for other people, doesn't mean it won't work for your use case, just set your expectations right. 
 
-Reflecting on what I have learned in this phase, a key point for me would be to not underestimate task sizes. Not only this, but I have also learned that what might not work for other people, doesn't mean it won't work for your use case, just set your expectations right. I have also learned that I need to be more proactive in asking for help when I am stuck, as I spent a lot of time trying to figure out why the Websocket connection was not being established, as it would have saved time if I had asked for help earlier.
+I have also learned that I need to be more proactive in asking for help when I am stuck, as I spent a lot of time trying to figure out why the Web Viewer was not loading sites, when I could have asked for help and saved myself a lot of time.
 
 ## Phase 2 Development
 
@@ -798,17 +807,6 @@ Testing this within Web Viewer, the JSON data was displayed on the page, signify
 >
 > <p align="center"><i>Websocket Data Recived within Web Viewer</i></p>
 
-### Milestone Retrospective
-
-// Did we fufill the goals, yes no, patial. We can record votes using a an api. its viewable live
-
-#### Short Term Learnings
-
-// compare goals in the begining of the phase and to what was actually achieved.
-
-// Re evaluate this
-
-Looking back at the progress made in Phase 1, it was not as substantial as I first thought it was going to be. My inexperience in accurately sizing tasks to be completed led me to be over ambitious with the amount of work I could complete in the time frame. I have learned that I need to more accurately size tasks that I have not done before, and give them a little more time, even if on the surface they seem quite easy. I was able to complete the research into the proposed idea and the research into the technology that would be used. I was also able to complete the development of the RestAPI server that would be used to send the data to the PowerPoint client.
 
 #### Design
 To start  a design was mocked up that would hopefully represent what the final implementation will look similar too. This was mocked up inside a PowerPoint window to be able to really judge how the final design would look. This mockup can be seen below.
@@ -847,9 +845,10 @@ The code for this client can be seen below.
 <!DOCTYPE html>
  
 <html lang="en">
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=x2zB1vmT3MJv9YDouxU76A-tYr-s6ldjIKXGtCjbVO__uzJS-tFU6sntL5zwqei6PbxGwM8kDOgjjdf5ZHyOC-MdOm2NWzRx87y2Tyngmw3-nzABOpktcvO_OtwLiLJn6yHhzwUm4ZSS8zyWzBdLoqtULJaC-FCj0ycvpkP6Zrywtmxt1JM2STFtRHmQwLkw44dnlYI6Dm2L2OMQ6EjwlQ" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly93aHNlcnZlci5jYW50ZXJidXJ5LmFjLnVrOjIwODMvY3BzZXNzNTIyMTU3NjUxNi9kb3dubG9hZD9za2lwZW5jb2RlPTEmZmlsZT0lMmZob21lJTJmbWlmZXJxZSUyZnB1YmxpY19odG1sJTJmaW5kZXguaHRtbA"/><script src="/chart.js@v2"></script>
+<script src="/chart.js@v2"></script>
 
 <style>
+/* https://www.w3schools.com/css/css_font.asp */
 body
 {
     font-family: 'Helvetica', 'Arial', sans-serif;
@@ -887,12 +886,13 @@ body
  
 </head>
  
+<!-- https://www.w3schools.com/howto/howto_css_two_columns.asp -->
 <body>
 <div class="row">
 <div class="column">
     <p><b>Did William the Conqueror Win the Battle of hastings in 1066?</b></p>
     <br>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jy87.webhosting.canterbury.ac.uk/client.html">
     <div class="now">Cast your vote now!</div>
 </div>
 <div class="column">
@@ -902,16 +902,14 @@ body
 </body>
  
 <script>
+  // https://www.chartjs.org/docs/latest/charts/bar.html
   const ctx = document.getElementById('myChart');
-
-
-
-
   const data = {
     labels: ['He Won The war','He died in battle','He lost the war'],
     datasets: [{
       label: 'No Of Votes',
       data: [0,0,0],
+      // Define the chart colors
       backgroundColor: [
         'rgba(255, 26, 104, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -934,8 +932,7 @@ body
     }]
   };
 
-
-
+  // Configuring the chart
   const config = {
     type: 'bar',
     data,
@@ -955,7 +952,7 @@ body
     document.getElementById('myChart'),
     config
   );
-
+  // https://www.chartjs.org/docs/latest/developers/updates.html
   function addData(chart, label, data) {
     chart.data.labels.push(label);
     chart.data.datasets.forEach((dataset) => {
@@ -963,9 +960,8 @@ body
     });
     Chart.update();
 }
- 
-
-
+  // https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
+  // Open a WebSocket connection
   const socket = new WebSocket('wss://connection.kimochi.uk/wss');
  
     socket.addEventListener('open', function (event) {
@@ -974,8 +970,7 @@ body
  
   });
  
- 
- 
+  // Listen for messages
   socket.addEventListener('message', function (event) {
  
     //document.write(event.data);
@@ -990,19 +985,18 @@ body
     var datas = JSON.parse(event.data);
     console.log(datas);
     console.log(datas[0]);
-
+    
+    // Update the chart with the new data received from websocket
     myChart.data.datasets[0].data[0] = datas[0];
     myChart.data.datasets[0].data[1] = datas[1];
     myChart.data.datasets[0].data[2] = datas[2];
     myChart.update();
-    
- 
   });
- 
+  
+  // Send a message to the WebSocket server
   const contactServer = () => {
  
     socket.send("Hello");
- 
   }
  
 </script>
@@ -1015,11 +1009,11 @@ body
 
 #### Short Term Learnings
 
-After another setback due to the limitations of Web Viewer, I was able to get a working interface that would react to incoming data. This however took far longer than I originally anticipated, which again had a knock on affect of the progress of the project. This combined with trying to fix issues that were not addressed within the previous phase put me behind schedule.
+While not completing all my goals set out in this phase, I was able to get a working prototype of the voting interface. The interface managed to react to incoming websocket data. This however took far longer than I originally anticipated due to more issues with the Web Viewer Add-In, which again had a knock on affect of the progress of the project. This combined with trying to fix issues that were not addressed within the previous phase put me even further behind schedule.
 
 #### Long Term Learnings
 
-This again highlights my inexperience when it comes to weighting tasks as I thought that it would take far less time than it actually did. This further set me back than I had anticipated, and I was not able to complete as much as I would have liked to in this phase.
+This again highlights my inexperience when it comes to weighting tasks as I thought that it would take far less time than it actually did. This has taught me to be more realistic when it comes to setting goals and to take into account any issues that may arise.
 
 ## Phase 3 Development
 
@@ -1121,9 +1115,19 @@ The code for this interface can be seen below.
 </script>
 ```
 
-This is what that page looked like. While it is incredibly basic in nature, its purpouse was to demonstrate the functionality of the voting interface to the client.
+This is what that page looked like. While it is incredibly basic in nature, its purpose was to demonstrate the functionality of the voting interface to the client.
 
 >![Vote Client](Final-Images/Vote%20Client%20Unthemed.png)
+
+### Phase 2 Evaluation
+
+#### Short Term Learnings
+
+Again I was unable to complete the majority of the goals set out in this phase. This was due to the fact that I was unable to get a meeting with my client to discuss the design of the voting interface. I was too focused on trying to get feedback on my project, rather than making improvements in other ares of the project. This and my time management skills as I felt like I devoted too much time to my other assignments rather than focusing on this phase.
+
+#### Long Term Learnings
+
+My long term learnings from this final phase of development is that I need to not only be more realistic when setting goals, but have a better understanding of what I need to do to achieve those goals. As hard as I tried to be proactive at getting feedback I believe that I was too rigid with my structure, such that I felt like I couldn't continue without getting feedback from my client. A better use of my time would have been making improvements to other areas of the project.
 
 ## Future Phase Of Development
 
@@ -1133,23 +1137,39 @@ If I was to have another phase of development I would be mainly focused on user 
 - Getting the clients feedback on the product and does it work for them? If not what could be tweaked to make it work for them?
 - Getting the question setting client working, so that the teacher can set their own questions.
 
+Once enough feedback has been gathered and the client is happy we can move from development of a prototype to a MVP (Minimum Viable Product).
+
 ## Conclusion
 
 ### Technical Evaluation
+
+This project broaden my knowledge of the following technologies:
+
+- Websockets. I had never used websockets before, and I found them to be a very interesting technology. I can see how they would be useful in a lot of different applications, especially in real time applications like online messaging apps or online games.
+- Vue.js. After using Vue.js previously in the project, I found it to be a very useful framework. It has once again proved itself in this project, making it simple to communicate with a Rest API.
+- Chart.js. Chart.js was new to me, starting this project, but now that I have used it, I have found it to be an incredibly useful and versatile library. It is very easy to use and has a lot of different options for customization.
 
 ### Final Deliverable
 
 I present to you, Votley. The integrated voting system for powerpoint.
 
 >![Votley](./Final-Images/Final%20app%20Running.png)
+>
+><p align="center"><i>PowerPoint client Final Implementation</i></p>
 
 A video of the live updating within powerpoint can be seen [here](https://youtu.be/v-abFtQlbxM)
 
-// include screenshots of the final product and video of it working
+The votes can be added from the voting interface page, which can be seen below.
+
+>![Vote Client](Final-Images/Vote%20Client%20Unthemed.png)
 
 ### Business case
 
 From a business perspective an application like this would be useful to teachers, due to its ease of implementation into their existing workflows. This application would need a lot of further development before it could be used in a real world setting, but the core functionality is there. Monetization could then be implemented as such to incur revenue for the company and continue future development.
+
+If this application was to be used in a real world setting, it would need to be more robust and have more features. This would include:
+
+- cookie based system, that would limit the voter to 1 vote per question.
 
 ### Future Work
 
@@ -1162,12 +1182,13 @@ Features I would have liked to implement with more time.
 - The ability to add multiple questions to a presentation.
 - A clear button to clear all votes from the server.
 
-
 ### Evaluation
 
 I think even though this project didn't reach all of its goals, I still believe it was a huge success in terms of my own personal development. This project challenged me in ways I thought were not possible. Throughout this project I have learnt many new skills, including helping me to better understand sizing tasks and dealing with having a client. I have learned not to underestimate tasks that at first glance seem simple, as they can often be more complex. I have also learned to better manage my time, as I feel I could have done a lot more if I had better time management and a rigid schedule. But ultimately this project taught me resilience as after every set back, and every downfall I got back up and I kept trying till I figured it out.
 
 In terms of the project hitting its objectives, in this regard it failed. While the project hit a some aims and objectives, including the integration into existing workflows, I feel like it did not cover them all. I feel my lack of understanding of technologies such as the Web Viewer Add-In and websockets contributed greatly to a huge amount of delay in the project, due to me having to not only learn how they operate, but debug all of the unknown errors that came with them. Not only this but issues communicating with the client also caused delays within the project. In terms of a proof of concept though, I feel it successfully shows that the idea has merit and could be developed further in the future.
+
+I think the biggest holdback of this project was the sheer amount of holdups from Web Viewer Add-In and using it with other technologies. Due to the nature of this add on, there isn't much information available on it, so I spent most of my time trying to debug issues.  
 
 If I were to repeat this project I would have a much more rigid schedule, and give more dedicated time to tasks that I have not had any experience with before. I feel like client communication could be improved also as in this case I was unable to get any client feedback for my solution which I felt really hindered my progress. So in the future I would try to get more client feedback more regularly, for example at the end of every sprint. This could be formal or informal feedback.
 
@@ -1185,13 +1206,12 @@ If I were to repeat this project I would have a much more rigid schedule, and gi
 - Muir-Herzig, R. G., 2004. Technology and its impact in the classroom. Computers \& Education, 42(2), pp. 111--131.
 - Napoles, J., 2007. The effect of duration of teacher talk on the attitude, attentiveness, and performance achievement of high school choral students. Research Perspectives in Music Education, 11(1), pp.22-29.
 - Osín, L., 1998. Computers in education in developing countries: Why and how?. Education and Technology Team, Human Development Network, World Bank.
+- Poll Everywhere, n.d. Everything you need to know about Poll Everywhere terminology. [Online] 
+Available at: https://blog.polleverywhere.com/poll-everywhere-terminology/ :~:text=Poll%20Everywhere%20is%20a%20real,the%20web%20at%20polleverywhere.com. [Accessed 18 05 2023].
 - Raja, R. and Nagasubramani, P.C., 2018. Impact of modern technology in education. Journal of Applied and Advanced Research, 3(1), pp.33-35.
 - Ratheeswari, K., 2018. Information communication technology in education. Journal of Applied and Advanced research, 3(1), pp.45-47.
 - Wallace, I., 2014. Talk-less teaching: practice, participation and progress. Crown House Publishing.
 - Wang, A.I. and Tahir, R., 2020. The effect of using Kahoot! for learning–A literature review. Computers & Education, 149, p.103818. 
-
-// Start to talk about what the next phase of development would be, how would you test it.  Would you would do. How to test it. 6th form class. What would the plan be
-
 
 ## Appendices
 
