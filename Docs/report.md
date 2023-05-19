@@ -28,17 +28,18 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
     - [User Stories](#user-stories)
     - [Development Methodology](#development-methodology)
     - [Technology Selection](#technology-selection)
+    - [Technical Feasibility](#technical-feasibility)
   - [Phase 1 Development](#phase-1-development)
     - [Goals For Phase 1](#goals-for-phase-1)
     - [Challenges](#challenges)
       - [Importing webpages into PowerPoint](#importing-webpages-into-powerpoint)
-      - [WebViewer Limitations](#webviewer-limitations)
+      - [Web Viewer Limitations](#web-viewer-limitations)
       - [Websockets](#websockets)
     - [Successes](#successes)
-      - [WebViewer add in for PowerPoint](#webviewer-add-in-for-powerpoint)
-      - [Viewing a webpage in WebViewer](#viewing-a-webpage-in-webviewer)
+      - [Web Viewer add in for PowerPoint](#web-viewer-add-in-for-powerpoint)
+      - [Viewing a webpage in Web Viewer](#viewing-a-webpage-in-web-viewer)
       - [RestAPI Server](#restapi-server)
-      - [Containerizing the RestAPI](#containerizing-the-restapi)
+      - [Containerizing the RestAPI Server](#containerizing-the-restapi-server)
       - [Receiving Websockets](#receiving-websockets)
     - [Milestone Retrospective](#milestone-retrospective)
       - [Short Term Learnings](#short-term-learnings)
@@ -60,6 +61,7 @@ I would like to thank my amazing project supervisor Allan Callaghan for all his 
     - [Successes](#successes-2)
       - [Designing the voting interface](#designing-the-voting-interface)
       - [Creating the voting interface page](#creating-the-voting-interface-page)
+  - [Future Phase Of Development](#future-phase-of-development)
   - [Conclusion](#conclusion)
     - [Final Deliverable](#final-deliverable)
     - [Business case](#business-case)
@@ -113,7 +115,7 @@ The solution should have:
 
 The solution could have:
 
-- Customizable themes.
+- 
 
 The solution won't have:
 
@@ -132,10 +134,9 @@ Reference educational theory about involving them
 These are outside of the scope of this project but could be considered in the future.
 
 - Integration with other presentation software
-- Different chart types // Diffrerent chart types // No need for loads of user testing due to it not being used by a wider audience. The user is going to be trained in part of the development process. Text based, used by 1 user
-- Ability to add images to questions
-
-Monetization is out of scope - consider in conclusion.
+- User testing due to it not being used by a wider audience.
+- User manual, as the user will be trained in the use of the software.
+- No need to consider monetization, as this is a proof of concept project.
 
 ### Scope of the project
 
@@ -151,7 +152,7 @@ The main concept behind 'Talk Less Teaching' is to increase the amount of time s
 
 #### Technology and the Modern Classroom
 
-Technology is an essential tool for teaching and learning in the 21st century (Muir-Herzig, 2004)
+Technology is an essential tool for teaching and learning in the 21st century (Muir-Herzig, 2004) it has revolutionized education and has allowed for new ways of teaching and learning (Raja, 2018). Technology not only helps to convey the material in a more attractive manner to students but also increases levels of engagement within the lesson (Ratheeswari, 2018).
 
 Why and how is technology being used in the classroom. What are the benefits of using technology in the classroom.
 
@@ -161,7 +162,7 @@ Some commercial solutions are already pre-existing and an analysis of such can b
 
 #### Mentimeter
 
-Mentimeter is a response tool that allows for the creation of interactive presentations. It allows for the creation of polls, quizzes, word clouds and more. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service (Iona,2018). It allows live responses to open questions. Mentimeter allows the use of may different question types, including bar graphs// Lots of diffrent question types. Include more detail
+Mentimeter is a response tool that allows for the creation of interactive presentations. It allows for the creation of polls, quizzes, word clouds and more. It is a web-based application that has a free beginning tier, that has limitations on its usage but is available as a paid service (Iona,2018). It allows live responses to open and closed questions. Mentimeter allows the use of may different question types, including polling, word clouds, quizzes and surveys.
 
 > Screenshots of the application:
 > Mentimeter Presentation Display             |  Mentimeter Voting Display
@@ -174,12 +175,11 @@ Features of the product:
 - It has the ability to create polls, quizzes, word clouds and more.
 - Customizable themes and layouts.
 - Allows the use of images as answers to questions.
+- Supports QR code to join the presentation.
 
 Limitations:
 
 - It doesn't seamlessly integrate into existing workflows, you have to switch to a web browser.
-- No QR code to join support. // It does have
-- More of a presentation tool than a voting tool. // Not really
 
 Break down what it is these solutions are doing.
 
@@ -280,8 +280,6 @@ Limitations:
 
 ### User Stories
 
-// Need to be more specific //So that is KEY //List how we will know when we have achieved the user story question on the device needs to be synchronized while the lesson is in progress. The user doesn't actively need to select the question.
-
 // Size tickets
 
 1. As a Student I want to be able to see the question that I am voting on, on my device in synchronization with the lesson so that I do not have to look up at the screen or select the question allowing me to focus on the question at hand.
@@ -339,6 +337,8 @@ The software stack that will be used for this project is:
 - chart.js will be used to display the results of the vote to the user in a graph-based representation.
 - vue.js will be used on the voting client to communicate with the RestAPI server.
 
+### Technical Feasibility
+
 ## Phase 1 Development
 
 ```mermaid
@@ -351,7 +351,7 @@ gantt
     Research proposed idea            :2022-09-28, 8d
     Research Web Sockets           :2022-10-07, 7d 
     Build RestAPI server           :2022-10-04, 7d
-``` 
+```
 
 ### Goals For Phase 1
 
@@ -359,6 +359,7 @@ gantt
 - Research the proposed solution and determine if it is feasible.
 - Create the API server for the voting system.
 - Research web sockets and their implementation.
+- Test websocket functionality within Web Viewer.
 
 After the meeting with Dale, we were able to determine a tool that would compliment his teaching. The proposed solution was to implement a voting system that would work within PowerPoint and would display feedback from students live within the PowerPoint presentation. The method of voting was as of yet undecided between a hardware-based device or a web-based client, but eventually settled on a web-based client due to the complexity and cost of a hardware-based solution. This means students would be able to use their phones or computers to interact with the voting system.
 
@@ -368,25 +369,71 @@ After the meeting with Dale, we were able to determine a tool that would complim
 
  In older versions of PowerPoint using embedded objects was supported but has since been discontinued and made obsolete. There were many plugins online promising to add live webpage functionality to Powerpoint but these were all antiquated, and only supported old versions of PowerPoint. Due to the nature of the environment that this solution was to be used in, it was not appropriate to install third party software that was not supported by the school.
 
-#### WebViewer Limitations
+#### Web Viewer Limitations
 
 Reading the reviews for the webview add in for PowerPoint, reviews were overwhelmingly negative, with many users reporting that the add in did not work at all. “Doesn’t work with basic sites”, “Waste of time” and “Next to useless” (Microsoft Corporation, 2023) were just a few of the reviews that contributed to the 1.9 star rating on the Microsoft store. When imported into a presentation, most webpages would not load and would display a blank screen. Trialing several webpages, the only webpage that did work with the add in was wikipedia.org.
 
 #### Websockets
 
-Websocket support was critical for this project as to enable the live updating feature. Creating a simple webpage that shows the data received through a websocket connection was easy enough, but the challenge was to get this data into PowerPoint. After loading the page in WebViewer, the websocket connection was not established. When tested within a browser the page worked fine. This was a limitation of the WebViewer add in for PowerPoint.
+Websocket support was critical to enable the live updating feature on the presentation client. Creating a simple webpage that shows the data received through a websocket connection. After loading the page in Web Viewer, the websocket connection was not established. When tested within a browser the page worked fine. This was a limitation of the Web Viewer add in for PowerPoint.
 
-// Include pages used for testing websocket connections and the results of those tests.
+The below code was used to test the websocket connection.
+
+```html
+<!DOCTYPE html>
+ 
+<html lang="en">
+ 
+<head>
+ 
+    <meta charset="UTF-8">
+ 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>WebSocker Client</title>
+ </head>
+<body>
+    <button onclick="contactServer">Click Here</button>
+</body>
+<script>
+    const socket = new WebSocket('ws://88.111.67.58/ws');
+ 
+    socket.addEventListener('open', function (event) {
+ 
+    socket.send('hello');
+});
+ 
+socket.addEventListener('message', function (event) {
+ 
+    document.write(event.data);
+ 
+});
+ 
+const contactServer = () => {
+ 
+    socket.send("Hello");
+    document.write(event.data);
+ 
+}
+ 
+</script>
+ 
+</html>
+```
+
+When the button displayed on the HTML page is clicked the `contactServer` function is called. This function sends a message to the websocket server and then displays the response on the page. This allows for the testing of the websocket connection without access to the console.
 
 ### Successes
 
-#### WebViewer add in for PowerPoint
+#### Web Viewer add in for PowerPoint
 
-The Web Viewer add in for PowerPoint was the perfect solution for this use case. It is easy to install, easy to use and worked with the latest version of PowerPoint. It was also an official Microsoft add in, so it was from a trusted and secure source that is already used within the school. It is also free to use, which means the school incurs no extra costs. The add in allowed for the embedding of live webpages within PowerPoint, and the ability to navigate to different webpages within the same slide.
+The Web Viewer add in for PowerPoint was the perfect solution for this use case. It is easy to install, easy to use and worked with the latest version of PowerPoint. It was also an official Microsoft add in, so it was from a trusted and secure source that is already used within the school. It is also free to use, which means the school incurs no extra costs. The add-in allowed for the embedding of live webpages within PowerPoint, and the ability to navigate to different webpages within the same slide.
 
-#### Viewing a webpage in WebViewer
+#### Viewing a webpage in Web Viewer
 
-After Wikipedia.org loaded successfully in the Web Viewer add in, the task was to figure out what made that page different to the others that were tested. Loading a basic "Hello World" HTTP page worked also. WebViewer seemed to have issues displaying some forms of Javascript content. Testing other basic webpages worked also. Simple Javascript pages, such as canvas, worked also.
+After Wikipedia.org loaded successfully in the Web Viewer add in, the task was to figure out what made that page different to the others that were tested. Loading a basic "Hello World" HTTP page worked also. Web Viewer seemed to have issues displaying some forms of Javascript content. Testing other basic webpages worked also. Simple Javascript pages, such as canvas, worked also.
 
 #### RestAPI Server
 
@@ -559,13 +606,9 @@ The websocket endpoint awaits a websocket connection request on the `/ws` endpoi
 }
 ```
 
-// Design assumptions
-
 This means that the question in the 1 position has 1 vote, the question in the 2 position has 3 votes, the question in the 3 position has 5 votes and the question in the 4 position has 0 votes.
 
-#### Containerizing the RestAPI
-
-// Slim out the unnessasary words // .
+#### Containerizing the RestAPI Server
 
 In order to make the server easily deployable, the server was containerized using docker. The Dockerfile used to containerize the server can be seen below.
 
@@ -599,7 +642,9 @@ The make file can be ran by using the command `make build` to build the containe
 
 Development log. You actually built something. Next phase, next date. these things were not identifed so had to cover this thing. have dates and milestones. Have it as developemnt log. by date
 
-After researching extensively into Websockets, it was found there are two types of Websockets, secure and insecure. Secure Websockets use the `wss://` protocol and insecure Websockets use the `ws://` protocol. The WebViewer add in for PowerPoint only supports secure Websockets, this is due to the fact that WebViewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. The adapted code for the Websocket connection can be seen below.
+Resuming research into Websockets, I found there are two types of Websockets, secure and insecure. Secure Websockets use the `wss://` protocol and insecure Websockets use the `ws://` protocol. The Web Viewer add in for PowerPoint only supports secure Websockets, this is due to the fact that Web Viewer only supports the HTTPS protocol. This was the reason why the Websocket connection was not being established. The adapted code for the Websocket connection can be seen below.
+
+RestAPI Server Side:
 
 ```python
 # Websocket Route ----------------------------------------
@@ -615,14 +660,31 @@ async def websocket_endpoint(websocket: WebSocket):
         pass
 ```
 
+Websocket Test WSS:
+
+```javascript
+const socket = new WebSocket('wss://connection.kimochi.uk/wss');
+ 
+    socket.addEventListener('open', function (event) {
+ 
+    socket.send('hello');
+ 
+});
+```
+
 In order to get a HTTPS certificate for the server, a domain name was purchased. This domain was then proxied to the server using cloudflare. An A record was created for the subdomain "connection". The record created in cloudflare can be seen below.
 
 > ![Cloudflare A Record](./Refrence%20Images/Cloudflare/DNS%20Record%20Created.png)
+>
 > <p align="center"><i>A record created in cloudflare</i></p>
 
 Any requests to the subdomain "connection" would seem to be from a HTTPS source, allowing us to use the `wss://` protocol.
 
-// Include screenshot of the websocket connection in the PowerPoint client
+Testing this within Web Viewer, the JSON data was displayed on the page, signifying that the connection was successful.
+
+> ![Websocket Test](./Final-Images/Powerpoint%20Websocket%20Test.png)
+>
+> <p align="center"><i>Websocket Data Recived within Web Viewer</i></p>
 
 ### Milestone Retrospective
 
@@ -672,7 +734,7 @@ Chart.Js seemed like the most appropriate library to use for showing the votes i
 
 This entire graph is generated using code and the Chart.js library.
 
-To ensure its functionality within WebViewer, the default template was added to a HTTPS page and loaded. The default template can be seen below.
+To ensure its functionality within Web Viewer, the default template was added to a HTTPS page and loaded. The default template can be seen below.
 
 ```HTML
 <!DOCTYPE html>
@@ -720,15 +782,15 @@ To ensure its functionality within WebViewer, the default template was added to 
 
 This can be found [here](https://github.com/Joshua-Yuill/Votley_Final-Year-Project/blob/327db0f6b5a3b515291bd263bff99328f3cb7ef6/Testing/Chart.html#L1)
 
-A comparison of the default template in a browser and in WebViewer can be seen below.
+A comparison of the default template in a browser and in Web Viewer can be seen below.
 
->Chart.Js Example Code In Browser            |  Chart.Js Example Code In WebViewer
+>Chart.Js Example Code In Browser            |  Chart.Js Example Code In Web Viewer
 > :-------------------------:|:-------------------------:
-> <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/../Refrence%20Images/Chart.Js/Chart.js%20Latest%20Browser.png" data-canonical-src="Chart.js In browser" width="400" /> | <img src="./Refrence%20Images/Mentimeter/../../Refrence%20Images/../Refrence%20Images/Chart.Js/Chart.js%20Latest%20WebViewer.png" data-canonical-src="Chart.js in WebViewer" width="400" />
+> <img src="./Refrence%20Images/Chart.Js/Chart.js%20Latest%20Browser.png" data-canonical-src="Chart.js In browser" width="400" /> | <img src="./Refrence%20Images/Chart.Js/Chart.js%20Latest%20WebViewer.png" data-canonical-src="Chart.js in Web Viewer" width="400" />
 
 Nothing but a blank screen again. Testing it in a browser and it was displaying; This was another Web Viewer limitation.
 
-Researching into WebViewer, it was found that it uses an old version of Microsoft Edge, version 1.9.0.0, an old and no longer supported browser. Because of this it did not contain all the latest features in modern browsers such as Web Workers which was utilised within the Chart.js library.
+Researching into Web Viewer, it was found that it uses an old version of Microsoft Edge, version 1.9.0.0, an old and no longer supported browser. Because of this it did not contain all the latest features in modern browsers such as Web Workers which was utilised within the Chart.js library.
 
 After much anguish and frustration, trying to look for a new library that would be compatible with this antiquated browser, one of my peers suggested using an older version of the Chart.js library.
 
@@ -745,7 +807,7 @@ To start  a design was mocked up that would hopefully represent what the final i
 
 // include screenshots and links of charts.js
 
-This design has some advantages based on our target audience, including:
+In this design I have made some assumptions based on the target audience, including:
 
 - The question is boldest and located at the centre of the design, where yours eyes are drawn to first. This keeps the focus on the question and not the results.
 - There are clear instructions at the top of the design, instructing the users on how they can participate in the vote. The instructions are clear and simple as to not cause any ambiguity.
@@ -756,11 +818,11 @@ This design has some advantages based on our target audience, including:
 
 #### Chart.JS v2
 
-Working backwards from the latest version of Chart.js (Version 4) every version of Chart.Js was tried to check for functionality within WebViewer. Version 2 managed to successfully display within WebViewer, albeit without color, this however was an easy fix by just defining the color pallet
+Working backwards from the latest version of Chart.js (Version 4) every version of Chart.Js was tried to check for functionality within Web Viewer. Version 2 managed to successfully display within Web Viewer, albeit without color, this however was an easy fix by just defining the color pallet
 
 #### Websockets to votes
 
-Now that charts were displaying within WebViewer, I had to be able to take in the votes from the websocket connection. This was new for me understanding how to take in data from a websocket connection, but after a little research I was able to get the graph moving to the incoming votes.
+Now that charts were displaying within Web Viewer, I had to be able to take in the votes from the websocket connection. This was new for me understanding how to take in data from a websocket connection, but after a little research I was able to get the graph moving to the incoming votes.
 
 Once I had the ability to manipulate the graph with votes it was time for the finishing touches on the powerpoint client. This included using an API that takes in a url and returns a QR code image. and the title being to the right and the voting to the left. This was all done using HTML and CSS. After it was all done I am pretty impressed with the final result especially with how close it resembles the mockup. This can be seen below.
 
@@ -874,6 +936,8 @@ The code for this interface can be seen below.
 
 In order to give a better representation of the final product, the voting interface page was designed to look like more similar to the mockup design.
 
+## Future Phase Of Development
+
 ## Conclusion
 
 ### Final Deliverable
@@ -884,7 +948,7 @@ I present to you, Votley. The integrated voting system for powerpoint.
 
 ### Business case
 
-From a business perspective I could see an application like this being useful to teachers, purely because of its ease of implementation into their existing workflows // be careful with meaningless empty words. // Look at it like a word budget
+From a business perspective an application like this would be useful to teachers, due to its ease of implementation into their existing workflows // be careful with meaningless empty words. // Look at it like a word budget
 
 ### Future Work
 
@@ -898,7 +962,7 @@ Not only this I would make a client where the teacher can login and set the ques
 
 I think even though this project didn't reach all of its goals, I still believe it was a huge success in terms of my own personal development. Throughout this project I have learnt many new skills, including helping me to better understand sizing tasks and dealing with having a client. I have learned not to underestimate tasks that at first glance seem simple, as they can often be more complex. I have also learned to better manage my time, as I feel I could have done a lot more if I had better time management and a rigid schedule.
 
-In terms of the project hitting its objectives, in this regard it failed. I feel my lack of understanding of technologies such as the WebViewer Add-In and websockets contributed greatly to a huge amount of delay in the project, due to me having to not only learn how they operate, but debug all of the unknown errors that came with them.
+In terms of the project hitting its objectives, in this regard it failed. I feel my lack of understanding of technologies such as the Web Viewer Add-In and websockets contributed greatly to a huge amount of delay in the project, due to me having to not only learn how they operate, but debug all of the unknown errors that came with them.
 
 ## References
 
@@ -918,6 +982,8 @@ Available at: https://www.chartjs.org/docs/latest/getting-started/usage.html [Ac
 - McGrath, S., 2019. Talk Less So Students Learn More. Edutopia. Recuperado em, 16.
 - Napoles, J., 2007. The effect of duration of teacher talk on the attitude, attentiveness, and performance achievement of high school choral students. Research Perspectives in Music Education, 11(1), pp.22-29.
 - McCormick, M., 2012. Waterfall vs. Agile methodology. MPCS, N/A, 3.
+- Raja, R. and Nagasubramani, P.C., 2018. Impact of modern technology in education. Journal of Applied and Advanced Research, 3(1), pp.33-35.
+- Ratheeswari, K., 2018. Information communication technology in education. Journal of Applied and Advanced research, 3(1), pp.45-47.
 
 // Start to talk about what the next phase of development would be, how would you test it.  Would you would do. How to test it. 6th form class. What would the plan be
 
