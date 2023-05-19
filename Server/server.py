@@ -15,11 +15,13 @@ class Question(BaseModel):
     
 class Vote(BaseModel):
     qResponse: int
+
+# This is used to validate the incoming data and error check it
 #------------------------------------------------
 # Every websocket connection will need its own unique queue
 
 #----------------------------------------------------
-app.add_middleware(
+app.add_middleware( # https://fastapi.tiangolo.com/tutorial/cors/
 CORSMiddleware,
 allow_origins=["*"], # Allows all origins
 allow_credentials=True,
@@ -28,14 +30,12 @@ allow_headers=["*"], # Allows all headers
 )
 #----------------------------------------------------
 
-
+#- Creating a queue to store responses
 q = Queue()
-
 responses = defaultdict(int)
-
 questions = {}
 
-
+#- Default Page
 @app.get("/",response_class=HTMLResponse,status_code=200)
 async def Default():
     return """
@@ -50,25 +50,24 @@ async def Default():
     </html>
     """
 
+#- Question submission endpoint 
 @app.post("/question")
 async def make_question(question: Question):
-    print("start")
 
     questionTitle = question.dict()
     
     max_value = max(questions, key=questions.get, default=0)
     max_value = max_value + 1
     questions[max_value] = dict(questionTitle)
-
-    print(questions)
     
     return "Success",questions
 
+#- Question retrieval endpoint
 @app.get("/question/")
 async def return_items():
-    print(questions)
     return questions
 
+#- Vote submission endpoint
 @app.post("/response")
 async def accept_vote(vote: Vote):
     responses[vote.qResponse] += 1
@@ -76,7 +75,8 @@ async def accept_vote(vote: Vote):
     await q.put(responses)
     return "Success"
 
-@app.websocket("/wss")
+#- Websocket endpoint
+@app.websocket("/wss") #https://fastapi.tiangolo.com/advanced/websockets/
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     try:

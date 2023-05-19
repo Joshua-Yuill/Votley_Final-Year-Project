@@ -151,9 +151,8 @@ The main concept behind 'Talk Less Teaching' is to increase the amount of time s
 
 #### Technology and the Modern Classroom
 
-Technology is an essential tool for teaching and learning in the 21st century (Muir-Herzig, 2004) it has revolutionized education and has allowed for new ways of teaching and learning (Raja, 2018). Technology not only helps to convey the material in a more attractive manner to students but also increases levels of engagement within the lesson (Ratheeswari, 2018).
+Technology is an essential tool for teaching and learning in the 21st century (Muir-Herzig, 2004) it has revolutionized education and has allowed for new ways of teaching and learning (Raja, 2018). Technology not only helps to convey the material in a more attractive manner to students but also increases levels of engagement within the lesson (Ratheeswari, 2018). Computers in the classroom enables a level of individualized interactivity that has never yet been seen before. Compared to previous methods of teaching, the blackboard and even to televisions, they were all one way methods of presentation (Osín, 1998) . The computer on the other hand is a bi-directional method of learning as they can not only give information to the user but receive it also. This allows for a learning experience where the student is able to work at their own pace.
 
-Why and how is technology being used in the classroom. What are the benefits of using technology in the classroom.
 
 ### Existing Similar Solutions
 
@@ -1185,6 +1184,7 @@ If I were to repeat this project I would have a much more rigid schedule, and gi
 - Microsoft Corporation, 2023. Web Viewer. [Online] Available at: <https://appsource.microsoft.com/en-us/product/office/WA104295828?tab=Reviews&exp=ubp8#> (Accessed on 2023-04-25)
 - Muir-Herzig, R. G., 2004. Technology and its impact in the classroom. Computers \& Education, 42(2), pp. 111--131.
 - Napoles, J., 2007. The effect of duration of teacher talk on the attitude, attentiveness, and performance achievement of high school choral students. Research Perspectives in Music Education, 11(1), pp.22-29.
+- Osín, L., 1998. Computers in education in developing countries: Why and how?. Education and Technology Team, Human Development Network, World Bank.
 - Raja, R. and Nagasubramani, P.C., 2018. Impact of modern technology in education. Journal of Applied and Advanced Research, 3(1), pp.33-35.
 - Ratheeswari, K., 2018. Information communication technology in education. Journal of Applied and Advanced research, 3(1), pp.45-47.
 - Wallace, I., 2014. Talk-less teaching: practice, participation and progress. Crown House Publishing.

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
  
 <html lang="en">
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Eac5HRrLGBj9D61HTaI_6lQklH_L8T-1QyNeoJlnrG7ZCUq1gYhlrfmv9PCQnbUX4tXEA3XWZLm-mTNGMMXgxBs0_px9qFSHIMjwU1VhKYu7zzs1LN1Czo5SZwv7y2oFoUjbhbzRJnzgDlHsWkkdXGcsKX2DJHv8GXUJ5tMugOx2RBWrpyjrsBd39K42sLC6BCUQUPdwYJHjv0cYT0pB3w" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly93aHNlcnZlci5jYW50ZXJidXJ5LmFjLnVrOjIwODMvY3BzZXNzMjU2MzQ1NTIzMC9kb3dubG9hZD9za2lwZW5jb2RlPTEmZmlsZT0lMmZob21lJTJmbWlmZXJxZSUyZnB1YmxpY19odG1sJTJmaW5kZXguaHRtbA"/><script src="/chart.js@v2"></script>
+<script src="/chart.js@v2"></script>
 
 <style>
+/* https://www.w3schools.com/css/css_font.asp */
 body
 {
     font-family: 'Helvetica', 'Arial', sans-serif;
@@ -41,6 +42,7 @@ body
  
 </head>
  
+<!-- https://www.w3schools.com/howto/howto_css_two_columns.asp -->
 <body>
 <div class="row">
 <div class="column">
@@ -56,8 +58,8 @@ body
 </body>
  
 <script>
+  // https://www.chartjs.org/docs/latest/charts/bar.html
   const ctx = document.getElementById('myChart');
-
 
 
 
@@ -66,6 +68,7 @@ body
     datasets: [{
       label: 'No Of Votes',
       data: [0,0,0],
+      // Define the chart colors
       backgroundColor: [
         'rgba(255, 26, 104, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -89,7 +92,7 @@ body
   };
 
 
-
+  // Configuring the chart
   const config = {
     type: 'bar',
     data,
@@ -109,7 +112,7 @@ body
     document.getElementById('myChart'),
     config
   );
-
+  // https://www.chartjs.org/docs/latest/developers/updates.html
   function addData(chart, label, data) {
     chart.data.labels.push(label);
     chart.data.datasets.forEach((dataset) => {
@@ -119,7 +122,8 @@ body
 }
  
 
-
+  // https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
+  // Open a WebSocket connection
   const socket = new WebSocket('wss://connection.kimochi.uk/wss');
  
     socket.addEventListener('open', function (event) {
@@ -129,7 +133,7 @@ body
   });
  
  
- 
+  // Listen for messages
   socket.addEventListener('message', function (event) {
  
     //document.write(event.data);
@@ -144,7 +148,8 @@ body
     var datas = JSON.parse(event.data);
     console.log(datas);
     console.log(datas[0]);
-
+    
+    // Update the chart with the new data received from websocket
     myChart.data.datasets[0].data[0] = datas[0];
     myChart.data.datasets[0].data[1] = datas[1];
     myChart.data.datasets[0].data[2] = datas[2];
@@ -152,7 +157,8 @@ body
     
  
   });
- 
+  
+  // Send a message to the WebSocket server
   const contactServer = () => {
  
     socket.send("Hello");
